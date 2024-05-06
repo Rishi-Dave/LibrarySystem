@@ -26,14 +26,15 @@
  > ## Phase II
 > 
 ### Navigation Diagram
-> Draw a diagram illustrating how the user can navigate from one screen to another. Here is an [example](https://creately.com/diagram/example/ikfqudv82/user-navigation-diagram-classic?r=v). It can be useful to label each symbol that represents a screen so that you can reference the screens in the next section or the rest of the document if necessary. Give a brief description of what the diagram represents.
+> The Diagram belows shows the how a user would expect to move from page in the program with the starting point being the login page.
+> 
 ![NavigationDiagram](https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/fd80fcb5-dc76-4545-bf8d-f2d79e81d8b4)
 
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
 ## Class Diagram
- > Include a **class diagram(s)** for your project and a **description** of the diagram(s). Your class diagram(s) should include all the main classes you plan for the project. This should be in sufficient detail that another group could pick up the project this point and successfully complete it. Use proper UML notation (as discussed in the course slides).
+ > The UML digrams shows all the classes that are invovled in creating the Libarry system. It mainly consisting of two databases with a catalog that holds books and then a user database that holds users and admins. Users can checkout books, return, and pay fees while Admins can everything mentioned previously and add remove, add, and edit books in the catalog.
  ![image](https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/76c18b5d-66d8-4f0e-b080-3c61012e0d21)
 
  > ## Phase III

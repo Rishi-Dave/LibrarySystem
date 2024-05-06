@@ -23,7 +23,6 @@
 >     * The library have a limited amount of books. Once a user borrows a book, the storage of the library will change. If a book is out of storage, it will be in a hiden file.
 >     * User accounts can only manage their account, display books and borrow books. Only administrator can add/edit/remove books.
 
- > ## Phase II
 > 
 ### Navigation Diagram
 > The Diagram belows shows the how a user would expect to move from page in the program with the starting point being the login page.

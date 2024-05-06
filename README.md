@@ -34,7 +34,7 @@
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.
 
 ## Class Diagram
- > The UML digrams shows all the classes that are invovled in creating the Libarry system. It mainly consisting of two databases with a catalog that holds books and then a user database that holds users and admins. Users can checkout books, return, and pay fees while Admins can everything mentioned previously and add remove, add, and edit books in the catalog.
+ > The UML digrams shows all the classes that are invovled in creating the Libarry system. It mainly consisting of two databases with a catalog that holds books and then a user database that holds users and admins. Users can checkout books, return, and pay fees while Admins can do everything mentioned previously and add remove, add, and edit books in the catalog.
  ![image](https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/76c18b5d-66d8-4f0e-b080-3c61012e0d21)
 
  > ## Phase III

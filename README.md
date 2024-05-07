@@ -26,8 +26,8 @@
 > 
 ### Navigation Diagram
 > The Diagram belows shows the how a user would expect to move from page in the program with the starting point being the login page.
-> 
-![NavigationDiagram](https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/fd80fcb5-dc76-4545-bf8d-f2d79e81d8b4)
+> ![Navigation Diagram Library Management](https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/eb57d41b-30d5-48ac-8609-a91e235b5c7c)
+
 
 ### Screen Layouts
 > Include the layout of each of your screens. The layout should describe the screen’s major components such as menus and prompts for user inputs and expected output, or any graphical user interface components if applicable (e.g. buttons, text boxes, etc). Explain what is on the layout, and the purpose of each menu item, button, etc. If many screens share the same layout, start by describing the general layout and then list the screens that will be using that layout and the differences between each of them.

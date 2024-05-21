@@ -35,7 +35,8 @@
 
 ## Class Diagram
  > The UML digrams shows all the classes that are invovled in creating the Libarry system. It mainly consisting of two databases with a catalog that holds books and then a user database that holds users and admins. Users can checkout books, return, and pay fees while Admins can do everything mentioned previously and add remove, add, and edit books in the catalog.
- ![image](https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/76c18b5d-66d8-4f0e-b080-3c61012e0d21)
+> ![image](https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/44cdcee7-6b9a-41d6-9039-84f4f9831d64)
+
 
  > ## Phase III
  > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.

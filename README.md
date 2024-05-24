@@ -36,7 +36,8 @@
 ## Class Diagram
  > The UML digrams shows all the classes that are invovled in creating the Libarry system. It mainly consisting of two databases with a catalog that holds books and then a user database that holds users and admins. Users can checkout books, return, and pay fees while Admins can do everything mentioned previously and add remove, add, and edit books in the catalog.
 
-![image](https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/31af21df-c412-49d3-85b6-aa2b38ae285e)
+
+![image](https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/e375a896-bdc9-497a-87f1-7f2535f813a0)
 
 
  > ## Phase III

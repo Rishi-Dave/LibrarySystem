@@ -1,37 +1,64 @@
-    #include "Book.h"
-
-    Book::Book():title(""), author(""), isbn(""), available(false){}
+#include "Book.h"
 
 
-    Book::Book(const string& title, const string& author, const string& isbn)
-: title_(title), author_(author), isbn_(isbn), available_(true) {}
+// Constructors
+Book::Book() : Title(""), Author(""), isbn(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false) {}
 
+Book::Book(std::string title, std::string Author, int isbn, std::string datePublished, 
+           std::string dueDate, std::string genre, std::string language, std::string subject, bool status)
+    : Title(title), Author(author), isbn(isbn), DatePublished(datePublished), DueDate(dueDate), Genre(genre), Language(language), Subject(subject), Status(status) {}
 
+// Accessors
+string Book::getTitle() const { return Title; }
+string Book::getAuthor() const { return Author; }
+string Book::getLanguage() const { return Language; }
+string Book::getSubject() const { return Subject; }
+string Book::getGenre() const { return Genre; }
+string Book::getDate() const { return DatePublished; }
+string Book::getDuedate() const {return dueDate; }
+int Book::getISBN() const { return isbn; }
+bool Book::getStatus() const { return Status; }
 
-    void Book::checkout() {
-    available_ = false;
+// Mutators
+void Book::setTitle(const string &title) { 
+    Title = title; 
+}
+void Book::setAuthor(const string &author) { 
+    Author = author; 
+}
+void Book::setLanguage(const string &language) { 
+    Language = language; 
+}
+void Book::setSubject(const string &subject) { 
+    Subject = subject; 
+}
+void Book::setGenre(const string &genre) { 
+    Genre = genre; 
+}
+void Book::setDate(const string &datePublished) { 
+    DatePublished = datePublished; 
+}
+void Book::setdueDate(const string &newduedate) { 
+    DueDate = newduedate; 
+}
+void Book::setISBN(int &isbn) { 
+    ISBN = isbn;
+}
+void Book::setStatus(bool status) { 
+    Status = status;
 }
 
-    void Book::returnBook() {
-    available_ = true;
+// Print Book  | author | Genre | Language |SubJect | Date Published | ISBN 
+//Due Date:
+void Book::printBook() const {
+    cout << "Book: " << Title << " | Author:" << Author << " | Genre:" << Genre << " | Language:" << Language << " | Subject:" << Subject << " | Date Published:" << DatePublished << " | ISBN:" << isbn << endl;
+    cout << endl;
 }
 
-    bool Book::isAvailable() const {
-    return available;
-}
-
-    string Book::getTitle() const {
-    return title;
-}
-
-    string Book::getAuthor() const {
-    return author;
-}
-
-    string Book::getISBN() const {
-    return isbn;
-}
-
-    string Book::fullinfo() const {
-    return "Title: " + title_ + ", Author: " + author_ + ", ISBN: " + isbn_;
+// Show all function
+void Book::showAll() const {
+    cout << "Book: " << Title << " | Author:" << Author << " | Genre:" << Genre << " | Language:" << Language << " | Subject:" << Subject << " | Date Published:" << DatePublished << " | ISBN:" << isbn << endl;
+    if (Status) {
+        cout << " | Due Date: " << DueDate << endl;
+    }
 }

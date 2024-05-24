@@ -1,26 +1,30 @@
 #ifndef CATALOG_H
 #define CATALOG_H
 
-#include "Book.h"
 #include <vector>
+#include "Book.h"
 
 class Catalog {
-public:
-    void addBook(const Book& book);
-    bool deleteBook(const string& isbn);
-
-    bool checkoutBook(const string& isbn);
-    bool returnBook(const string& isbn);
-
-
-    <Book*> findBooksByTitle(const string& title);
-    vector<Book*> findBooksByAuthor(const string& author);
-    vector<Book*> findBooksByISBN(const string& isbn);
-
-
-
 private:
-    vector<Book> Totalbooklib;
+    std::vector<Book> library;
+
+public:
+    // Methods to sort the catalog
+    void sortbyAuthor();
+    void sortbyISBN();
+    void sortbyTitle();
+    void sortbyLang();
+    void sortbySubj();
+    void sortbyGenre();
+    void sortbyDate();
+
+    // Methods to search for books
+    Book* searchByTitle(const std::string &title);
+    Book* searchByISBN(int isbn);
+    void addBook(const Book &book);
+
+    // Method to print the catalog
+    void printCatalog() const;
 };
 
-#endif // CATALOG_H
+#endif 

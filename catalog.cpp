@@ -1,65 +1,100 @@
-#include "Catalog.h"
+#include "catalog.h"
+#include <algorithm>
+#include <iostream>
 
-void Catalog::addBook(const Book& book) {
-    Totalbooklib.push_back(book);
+// Method to add a book to the catalog
+void Catalog::addBook(const Book &book) {
+    library.push_back(book);
 }
 
-bool Catalog::deleteBook(const string& isbn) {
-    for (vector<Book>::iterator it = Totalbooklib.begin(); it != Totalbooklib.end(); ++it) {
-        if (it->getISBN() == isbn) {
-            Totalbooklib.erase(it);
-            return true;
+// Method to search for a book by title
+Book* Catalog::searchByTitle(const string &title) {
+    for (size_t i = 0; i < library.size(); ++i) {
+        if (library[i].getTitle() == title) {
+            return &library[i];
         }
     }
-    return false;
+    return nullptr;
 }
 
-//search parts
-
-vector<Book*> Catalog::findBooksByTitle(const string& title) {
-    vector<Book*> results;
-    for (size_t i = 0; i < Totalbooklib.size(); ++i) {
-        if (Totalbooklib[i].getTitle().substr(0, title.length()) == title) {
-            results.push_back(&Totalbooklib[i]);
+// Method to search for a book by ISBN
+Book* Catalog::searchByISBN(int isbn) {
+    for (size_t i = 0; i < library.size(); ++i) {
+        if (library[i].getISBN() == isbn) {
+            return &library[i];
         }
     }
-    return results;
+    return nullptr;
 }
 
-vector<Book*> Catalog::findBooksByAuthor(const string& author) {
-    vector<Book*> results;
-    for (size_t i = 0; i < Totalbooklib.size(); ++i) {
-        if (Totalbooklib[i].getAuthor() == author) {
-            results.push_back(&Totalbooklib[i]);
-        }
-    }
-    return results;
+// Comparison functions for sorting
+bool compareByAuthor(const Book &a, const Book &b) {
+    return a.getAuthor() < b.getAuthor();
 }
 
-std::vector<Book*> Catalog::findBooksByISBN(const std::string& isbn) {
-    std::vector<Book*> results;
-    for (size_t i = 0; i < Totalbooklib.size(); ++i) {
-        if (Totalbooklib[i].getISBN() == isbn) {
-            results.push_back(&Totalbooklib[i]);
-        }
-    }
-    return results;
+bool compareByISBN(const Book &a, const Book &b) {
+    return a.getISBN() < b.getISBN();
 }
 
-bool Catalog::checkoutBook(const string& isbn) {
-    vector<Book*> results = findBooksByISBN(isbn);
-    if (results.size() > 0 && results[0]->isAvailable()) {
-        results[0]->checkout();
-        return true;
-    }
-    return false;
+bool compareByTitle(const Book &a, const Book &b) {
+    return a.getTitle() < b.getTitle();
 }
 
-bool Catalog::returnBook(const string& isbn) {
-    vector<Book*> results = findBooksByISBN(isbn);
-    if (results.size() > 0 && !results[0]->isAvailable()) {
-        results[0]->returnBook();
-        return true;
+bool compareByLanguage(const Book &a, const Book &b) {
+    return a.getLanguage() < b.getLanguage();
+}
+
+bool compareBySubject(const Book &a, const Book &b) {
+    return a.getSubject() < b.getSubject();
+}
+
+bool compareByGenre(const Book &a, const Book &b) {
+    return a.getGenre() < b.getGenre();
+}
+
+bool compareByDate(const Book &a, const Book &b) {
+    return a.getDate() < b.getDate();
+}
+
+// Method to sort books by author
+void Catalog::sortbyAuthor() {
+    sort(library.begin(), library.end(), compareByAuthor);
+}
+
+// Method to sort books by ISBN
+void Catalog::sortbyISBN() {
+    sort(library.begin(), library.end(), compareByISBN);
+}
+
+// Method to sort books by title
+void Catalog::sortbyTitle() {
+    sort(library.begin(), library.end(), compareByTitle);
+}
+
+// Method to sort books by language
+void Catalog::sortbyLang() {
+    sort(library.begin(), library.end(), compareByLanguage);
+}
+
+// Method to sort books by subject
+void Catalog::sortbySubj() {
+    sort(library.begin(), library.end(), compareBySubject);
+}
+
+// Method to sort books by genre
+void Catalog::sortbyGenre() {
+    sort(library.begin(), library.end(), compareByGenre);
+}
+
+// Method to sort books by date
+void Catalog::sortbyDate() {
+    sort(library.begin(), library.end(), compareByDate);
+}
+
+// Method to print the catalog
+void Catalog::printCatalog() const {
+    for (size_t i = 0; i < library.size(); ++i) {
+        library[i].printBook();
     }
     return false;
 }

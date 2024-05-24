@@ -19,7 +19,24 @@ void User::payFees(double payment){
 
 void User::populatebooks(){
     for(unsigned i = 0; i<5; i++){
-        mockbook newbook;
+        Book newbook;
         checkedBooks.push_back(newbook);
     }
+}
+
+std::string User::getUserInfo(){
+    std::string output = "";
+    output = output + firstName + " ";
+    output = output + lastName + " ";
+    output = output + userName + " ";
+    output = output + password + " ";
+    output+="\n";
+    if(checkBooks.size() > 0){
+        output+= "Books: ";
+    }
+    for(unsigned i = 0; i < checkedBooks.size(); i++){
+        output = output + checkBooks.at(i).getID() + " ";
+    }
+
+    return output;
 }

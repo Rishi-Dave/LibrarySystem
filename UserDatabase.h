@@ -5,7 +5,7 @@
 #include <string>
 #include <fstream>
 using namespace std;
-#include "Users.h"
+#include "user.h"
 
 class UserDatabase {
     private:

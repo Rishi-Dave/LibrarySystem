@@ -1,7 +1,6 @@
 #pragma once
 #include <iostream>
 #include <vector>
-#include "mockbook.h"
 
 class User{
     protected:
@@ -10,7 +9,7 @@ class User{
         std::string userName;
         double fees;
         std::string password;
-        std::vector<mockbook> checkedBooks;
+        std::vector<Book> checkedBooks;
     public:
         //constructor
          User(std::string first, std::string last, std::string uname, double balance,std::string key);
@@ -19,7 +18,7 @@ class User{
         std::string getLastName(){ return lastName;};
         double getBalance(){ return fees;};
         std::string getUserName(){ return userName;};
-        std::vector<mockbook>* vectorPointer(){return &checkedBooks;};
+        std::vector<Book>* vectorPointer(){return &checkedBooks;};
         //mutators 
         void setFirstName(std::string newName){ firstName = newName;}
         void setLastName(std::string newName){ lastName = newName;}
@@ -29,4 +28,5 @@ class User{
         void returnBook (int ID);
         //testing purposes
         void populatebooks();
+        std::string getUserInfo();
 };

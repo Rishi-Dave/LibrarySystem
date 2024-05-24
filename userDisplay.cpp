@@ -1,7 +1,6 @@
 #include "userDisplay.h"
 #include <iostream>
 //#include <vector>
-#include "mockbook.h"
 
 void userDisplay::showAll(User user){
     std::cout<<"Username: "<< user.getUserName()<<std::endl;
@@ -21,7 +20,7 @@ void userDisplay::showbalance(User user){
 }
 
 void userDisplay::checkedbooks(User user){
-   std::vector<mockbook> books = *(user.vectorPointer());
+   std::vector<Book> books = *(user.vectorPointer());
     for(unsigned int i =0 ;i < books.size(); i++){
         std::cout<<books.at(i).print();  
     }

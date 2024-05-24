@@ -2,6 +2,8 @@
 #define BOOK_H
 
 #include <string>
+#include <iostream>
+using namespace std;
 
 class Book {
 private:
@@ -19,7 +21,7 @@ public:
     // Constructors
     Book();
     Book(string title, string Author, int ISBN, string datePublished, 
-         string dueDate, tring genre, string language, string subject, bool status);
+         string dueDate, string genre, string language, string subject, bool status);
 
     // Accessors
     string getTitle() const;
@@ -28,7 +30,7 @@ public:
     string getSubject() const;
     string getGenre() const;
     string getDate() const;
-    string getDuedate()
+    string getDuedate() const;
     int getISBN() const;
     bool getStatus() const;
 

@@ -4,8 +4,8 @@
 // Constructors
 Book::Book() : Title(""), Author(""), isbn(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false) {}
 
-Book::Book(std::string title, std::string Author, int isbn, std::string datePublished, 
-           std::string dueDate, std::string genre, std::string language, std::string subject, bool status)
+Book::Book(string title, string Author, int isbn, string datePublished, 
+           string dueDate, string genre, string language, string subject, bool status)
     : Title(title), Author(author), isbn(isbn), DatePublished(datePublished), DueDate(dueDate), Genre(genre), Language(language), Subject(subject), Status(status) {}
 
 // Accessors

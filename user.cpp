@@ -5,7 +5,7 @@ User::User(std::string first, std::string last, std::string uname, double balanc
     firstName=first;
     lastName=last;
     userName=uname;
-    fees=0.0;
+    fees=balance;
     password = key;
     populatebooks();
 }

@@ -18,6 +18,12 @@ public:
     void sortbyGenre();
     void sortbyDate();
 
+    void displayCatalog() const;
+
+    // New function to read books from a file
+    void readBooksFromFile(const std::string& filename);
+
+    
     // Methods to search for books
     Book* searchByTitle(const std::string &title);
     Book* searchByISBN(int isbn);

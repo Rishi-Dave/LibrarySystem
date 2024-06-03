@@ -48,13 +48,18 @@ void Checkout::checkoutBook(Catalog &catalog) {
         }
     } 
     else {
+
         cout << "Book with that title was not found or is already checked out. Did you mean to enter a different book? (Y to re-prompt / N to cancel checkout menu): ";
+
         char choice;
         cin >> choice;
+
         cin.ignore();
+
         if (choice == 'Y' || choice == 'y') {
             checkoutBook(catalog); // Re-prompt for book title
-        } else {
+        } 
+        else {
             cout << "Checkout canceled.\n";
         }
     }

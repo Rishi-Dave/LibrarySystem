@@ -27,6 +27,33 @@ Book* Catalog::searchByISBN(int isbn) {
     return nullptr;
 }
 
+
+
+void Catalog::readBooksFromFile(const std::string& filename) {
+    std::ifstream file(filename);
+    if (!file) {
+        std::cerr << "Unable to open file " << filename << std::endl;
+        return;
+    }
+
+    std::string title;
+    std::string author;
+    int year;
+    while (file >> title >> author >> year) {
+        Book book(title, author, year);
+        addBook(book);
+    }
+    file.close();
+}
+
+
+void Catalog::displayCatalog() const {
+    for (const auto& book : library) {
+        book.display();
+    }
+}
+
+
 // Comparison functions for sorting
 bool compareByAuthor(const Book &a, const Book &b) {
     return a.getAuthor() < b.getAuthor();

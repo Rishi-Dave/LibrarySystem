@@ -2,6 +2,8 @@
 #define DISPLAY_H
 
 
+#include "UserDatabase.h"
+
 #include "user.h"
 
 #include <iostream>
@@ -14,6 +16,10 @@ class Display {
         void displayAdmin();     
         void displayWelcome(string pageName);
         void displayInputPrompt(int step);
+
+
+
+        void printWelcomeMessage();
 };
 
 #endif

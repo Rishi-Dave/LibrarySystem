@@ -1,5 +1,17 @@
 #include "AdminUser.h"
+AdminUser::AdminUser(string first, string last, string uname, double balance, string key, Catalog &theCatalog)
+    : User{first, last, uname, balance, key}
+    {
+        catalog = &theCatalog;
+    }
+void AdminUser::addBook(string Title, string author, int isbn, string dataPublished, string genre, string language, string subject, int id){
+    catalog->addBook(Title,  author,  isbn,  dataPublished,  genre,  language,  subject, id);
+}
 
+void AdminUser::removeBook(int id){
+    catalog->removeBook(id);
+}
+/*
 void AdminUser::editBook(int isbn) {
     // Question: recomment to check for confirm, in case that user input invalid value.
     string confirm = "N";
@@ -10,7 +22,7 @@ void AdminUser::editBook(int isbn) {
         cout << "Enter ID: ";
         
         // If not found
-        while (isbn != 0/*Book.isbn()*/) { // Question: do we have a search isbn function?
+        while (isbn != 0 Book.isbn()) { // Question: do we have a search isbn function?
             cout << "Book with that ID was not found. Did you mean to enter a different book?" << endl;
             cin >> confirm;
             // (Y (to reprompt)/ N ( to cancel checkout menu) )
@@ -44,9 +56,9 @@ void AdminUser::editBook(int isbn) {
             
             // Question: Plan to make a vector of change message such as Title, t and Author
             // so we could check if the user input is correct.
-            /*for (int i = 0; i < vector.size(); i++) {
+            for (int i = 0; i < vector.size(); i++) {
 
-            }*/
+            }
             cout << "Enter new " << change << ": ";
             if (change == "t" || change == "Title") {
                 // change the title of the book.
@@ -62,3 +74,5 @@ void AdminUser::editBook(int isbn) {
         
     } while (confirm == "C");
 }
+
+*/

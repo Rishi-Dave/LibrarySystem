@@ -8,7 +8,7 @@ void userDisplay::showAll(User user){
     std::cout<<"Balance: $"<< user.getBalance()<<std::endl<<std::endl;
     std::cout<< "Checked Books: "<<std::endl;
     //FOR TESTING PURPOSES REMOVE THIS FUNCTION UNDER
-    checkedbooks(user); 
+    // checkedbooks(user); 
 }
 
 void userDisplay::printName(User user){
@@ -19,9 +19,11 @@ void userDisplay::showbalance(User user){
     std::cout<<"$"<<user.getBalance();
 }
 
+/*
 void userDisplay::checkedbooks(User user){
    std::vector<Book> books = *(user.vectorPointer());
     for(unsigned int i =0 ;i < books.size(); i++){
         std::cout<<books.at(i).print();  
     }
 }
+*/

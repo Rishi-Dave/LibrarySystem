@@ -1,4 +1,5 @@
 #include "user.h"
+#include "book.h"
 #include <iostream>
 
 User::User(std::string first, std::string last, std::string uname, double balance,std::string key){
@@ -23,7 +24,7 @@ void User::populatebooks(){
         checkedBooks.push_back(newbook);
     }
 }
-
+/*
 std::string User::getUserInfo(){
     std::string output = "";
     output = output + firstName + " ";
@@ -31,12 +32,13 @@ std::string User::getUserInfo(){
     output = output + userName + " ";
     output = output + password + " ";
     output+="\n";
-    if(checkBooks.size() > 0){
+    if(checkedBooks.size() > 0){
         output+= "Books: ";
     }
     for(unsigned i = 0; i < checkedBooks.size(); i++){
-        output = output + checkBooks.at(i).getID() + " ";
+        output = output + checkedBooks.at(i).getID() + " ";
     }
 
     return output;
 }
+*/

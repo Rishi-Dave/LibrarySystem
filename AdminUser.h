@@ -4,15 +4,19 @@
 #include <iostream>
 #include <string>
 
-// #include "User.h"
-// #include "Book.h"
-
+#include "user.h"
+#include "book.h"
+#include "UserDatabase.h"
+#include "Catalog.h"
 using namespace std;
 
-class AdminUser {
+class AdminUser : public User{
+    private:
+        Catalog* catalog;
     public:
-        // void addBook(string Title, string author, string isbn, string dataPublished, string genre, string language, string subject, bool status);
-        // void removeBook(int isbn);
+        AdminUser(string first, string last, string uname, double balance, string key, Catalog &theCatalog);
+        void addBook(string Title, string author, int isbn, string dataPublished, string genre, string language, string subject, int id);
+        void removeBook(int id);
         void editBook(int isbn);
 };
 

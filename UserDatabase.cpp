@@ -1,5 +1,5 @@
 #include "UserDatabase.h"
-
+/*
 UserDatabase::UserDatabase(){
     usersFileName = "Users.txt";
     readFile();
@@ -15,4 +15,4 @@ void UserDatabase::writeFile() {
     }
 }
 
-// dummy function that we can move to Users.cpp in next sprint
+*/

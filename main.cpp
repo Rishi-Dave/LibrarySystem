@@ -8,4 +8,8 @@ int main(){
     AdminUser user1("Atharva", "Nevasekar", "atharvanev",45.20,"password", catalog);
     AdminDisplay adminDisplay;
     adminDisplay.addBook(&user1);
+    adminDisplay.addBook(&user1);
+    catalog.testPrint();
+    adminDisplay.removeBook(&user1);
+    catalog.testPrint();
 }

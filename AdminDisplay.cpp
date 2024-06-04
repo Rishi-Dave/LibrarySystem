@@ -91,3 +91,64 @@ void AdminDisplay::addBook(AdminUser* admin) {
     }
     addBook(admin);
 }
+
+void AdminDisplay::removeBook(AdminUser* admin){
+    int id;
+    cout << "Remove Book:" << endl << endl;
+    cout << "Enter ID:" << endl;
+    while (!(cin >> id)) {
+        cin.clear(); // Clear error flag
+        cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Discard invalid input
+        cout << "Invalid input. Enter a valid ID: ";
+    }
+    cin.ignore(); // Clear newline character from buffer
+
+    Book* myBook = admin->findBook(id);
+
+    if(!myBook){
+        cout << "Book with that ID was not found. Did you mean to enter a different book?" << endl;
+        
+        while (true) {
+            string verify;
+            cout << "(Y (to reprompt)/ N (to cancel remove menu))" << endl;
+            getline(cin, verify);
+            
+            if (verify == "Y" || verify == "y") {
+                removeBook(admin);
+            }
+
+            else if (verify == "N" || verify == "n") {
+                return;
+            }
+            else {
+                cout << "Invalid input. Please enter Y or N." << endl;
+            }
+        }
+    }
+    else{
+        while (true) {
+            string verify;
+            cout << "Book:" << endl;
+            cout << myBook->getTitle() << " | " << myBook->getAuthor() << " | " << myBook->getGenre() << " | " << myBook->getLanguage() << " | " <<
+                myBook->getSubject() << " | " << myBook->getDate() << " | " << myBook->getAuthor() << " | " << id << endl << endl;
+            cout << "Is this Correct?" << endl;
+            cout << "(Y (to remove book) / C (to change book) / N (to cancel remove menu))" << endl;
+            getline(cin, verify);
+            
+            if (verify == "Y" || verify == "y") {
+                admin->removeBook(id);
+                return;
+            }
+            else if (verify == "C" || verify == "c") {
+                break;
+            }
+            else if (verify == "N" || verify == "n") {
+                return;
+            }
+            else {
+                cout << "Invalid input. Please enter Y, C, or N." << endl;
+            }
+        }
+        removeBook(admin);
+    }
+}

@@ -18,6 +18,7 @@ class AdminUser : public User{
         void addBook(string Title, string author, int isbn, string dataPublished, string genre, string language, string subject, int id);
         void removeBook(int id);
         void editBook(int isbn);
+        Book* findBook(int id);
 };
 
 #endif

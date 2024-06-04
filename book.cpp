@@ -2,11 +2,12 @@
 
 
 // Constructors
-Book::Book() : Title(""), Author(""), ISBN(0), ID(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false) {}
 
-Book::Book(string title, string author, int isbn,int id, string datePublished, 
-           string dueDate, string genre, string language, string subject, bool status)
-    : Title(title), Author(author), ISBN(isbn),ID(id), DatePublished(datePublished), DueDate(dueDate), Genre(genre), Language(language), Subject(subject), Status(status) {}
+Book::Book() : Title(""), Author(""), ISBN(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false), ID(0){}
+
+Book::Book(string title, string author, int isbn, string datePublished, 
+           string dueDate, string genre, string language, string subject, bool status, int id) 
+        : Title(title), Author(author), ISBN(isbn), DatePublished(datePublished), DueDate(dueDate), Genre(genre), Language(language), Subject(subject), Status(status), ID(id){}
 
 // Accessors
 string Book::getTitle() const { return Title; }
@@ -19,7 +20,7 @@ string Book::getDuedate() const {return DueDate; }
 int Book::getISBN() const { return ISBN; }
 int Book::getID() const{return ID;}
 bool Book::getStatus() const { return Status; }
-
+int Book::getID() const { return ID; }
 // Mutators
 void Book::setTitle(const string &title) { 
     Title = title; 
@@ -51,3 +52,30 @@ void Book::setID(int &id) {
 void Book::setStatus(bool status) { 
     Status = status;
 }
+
+void Book::write(std::ofstream& outputFile) {
+  outputFile << "Title: " << Title << " | Author:" << Author
+            << " | Genre:" << Genre << " | Language:" << Language 
+            << " | Subject:" <<Subject << " | Date Published:" << DatePublished 
+            << " | ISBN:" << ISBN << "| ID:" << ID << std::endl;
+  outputFile << std::endl;
+}
+
+void Book::setID(int &id) { 
+    ID = id;
+}
+// Print Book  | author | Genre | Language |SubJect | Date Published | ISBN 
+//Due Date:
+void Book::printBook() const {
+    cout << "Book: " << Title << " | Author:" << Author << " | Genre:" << Genre << " | Language:" << Language << " | Subject:" << Subject << " | Date Published:" << DatePublished << " | ISBN:" << ISBN << endl;
+    cout << endl;
+}
+
+// Show all function
+void Book::showAll() const {
+    cout << "Book: " << Title << " | Author:" << Author << " | Genre:" << Genre << " | Language:" << Language << " | Subject:" << Subject << " | Date Published:" << DatePublished << " | ISBN:" << ISBN << endl;
+    if (Status) {
+        cout << " | Due Date: " << DueDate << endl;
+    }
+}
+

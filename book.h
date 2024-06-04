@@ -3,6 +3,8 @@
 
 #include <string>
 #include <iostream>
+#include <fstream> // Include header for file operations
+
 using namespace std;
 
 class Book {
@@ -17,12 +19,14 @@ private:
     string Language;
     string Subject;
     bool Status;
+    int ID;
 
 public:
     // Constructors
     Book();
-    Book(string title, string Author, int ISBN,int ID, string datePublished, 
-         string dueDate, string genre, string language, string subject, bool status);
+
+    Book(string title, string Author, int ISBN, string datePublished, 
+         string dueDate, string genre, string language, string subject, bool status, int id);
 
     // Accessors
     string getTitle() const;
@@ -35,6 +39,9 @@ public:
     int getISBN() const;
     int getID() const;
     bool getStatus() const;
+    int getID() const;
+
+    void write(std::ofstream& outputFile);
 
     // Mutators
     void setTitle(const string &title);
@@ -47,7 +54,14 @@ public:
     void setISBN(int &isbn);
     void setID(int &id);
     void setStatus(bool status);
+    void setID(int &id);
 
+    
+    // Print 
+    void printBook() const;
+
+    // Show all 
+    void showAll() const;
 };
 
 #endif 

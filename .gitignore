@@ -1,2 +1,8 @@
-.vscode
+*.vscode
 a.out
+CMakeFiles
+*.cmake
+CMakeCache.txt
+runMain
+build
+Users.txt

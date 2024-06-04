@@ -1,6 +1,7 @@
 #pragma once
 #include <iostream>
 #include <vector>
+#include "book.h"
 
 class User{
     protected:
@@ -24,9 +25,11 @@ class User{
         void setLastName(std::string newName){ lastName = newName;}
         //functions
         void payFees(double payment);
-        void checkoutBooks(int ID); 
+        void checkoutBook(int ID); 
         void returnBook (int ID);
         //testing purposes
         void populatebooks();
         std::string getUserInfo();
+
+
 };

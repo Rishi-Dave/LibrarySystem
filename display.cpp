@@ -7,6 +7,7 @@ void Display::displayAdmin() {
     cout << "> Add Book(a)" << endl;
     cout << "> Remove Book(r)" << endl;
     cout << "> Edit Book(e)" << endl;
+}
 
 void Display::displayWelcome(string pageName) {
     cout << "Welcome To Our Library Management System!!!" << endl << endl;

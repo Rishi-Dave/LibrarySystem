@@ -1,11 +1,15 @@
-#include "mockbook.h"
 #include "user.h"
 #include "userDisplay.h"
+#include "AdminDisplay.h"
+#include "AdminUser.h"
 
 int main(){
-    User user1("Atharva", "Nevasekar", "atharvanev",45.20,"password");
-    userDisplay printer;
-    printer.showAll(user1);
-    user1.payFees(20);
-    printer.showbalance(user1);
+    Catalog catalog;
+    AdminUser user1("Atharva", "Nevasekar", "atharvanev",45.20,"password", catalog);
+    AdminDisplay adminDisplay;
+    adminDisplay.addBook(&user1);
+    adminDisplay.addBook(&user1);
+    catalog.testPrint();
+    adminDisplay.removeBook(&user1);
+    catalog.testPrint();
 }

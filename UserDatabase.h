@@ -19,6 +19,7 @@ class UserDatabase {
         void signup(string firstName, string lastName, string userName, string password);
         void writeFile();
         void readFile();
+        bool removeBook(int id);
 };
 
 #endif

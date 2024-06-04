@@ -7,6 +7,7 @@ void Display::displayAdmin() {
     cout << "> Add Book(a)" << endl;
     cout << "> Remove Book(r)" << endl;
     cout << "> Edit Book(e)" << endl;
+}
 
 }
 

@@ -2,6 +2,7 @@
 
 
 // Constructors
+
 Book::Book() : Title(""), Author(""), ISBN(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false), ID(0){}
 
 Book::Book(string title, string author, int isbn, string datePublished, 
@@ -17,6 +18,7 @@ string Book::getGenre() const { return Genre; }
 string Book::getDate() const { return DatePublished; }
 string Book::getDuedate() const {return DueDate; }
 int Book::getISBN() const { return ISBN; }
+int Book::getID() const{return ID;}
 bool Book::getStatus() const { return Status; }
 int Book::getID() const { return ID; }
 // Mutators
@@ -44,8 +46,19 @@ void Book::setdueDate(const string &newduedate) {
 void Book::setISBN(int &isbn) { 
     ISBN = isbn;
 }
+void Book::setID(int &id) { 
+    ID = id;
+}
 void Book::setStatus(bool status) { 
     Status = status;
+}
+
+void Book::write(std::ofstream& outputFile) {
+  outputFile << "Title: " << Title << " | Author:" << Author
+            << " | Genre:" << Genre << " | Language:" << Language 
+            << " | Subject:" <<Subject << " | Date Published:" << DatePublished 
+            << " | ISBN:" << ISBN << "| ID:" << ID << std::endl;
+  outputFile << std::endl;
 }
 
 void Book::setID(int &id) { 

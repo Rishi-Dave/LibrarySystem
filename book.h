@@ -10,6 +10,7 @@ private:
     string Title;
     string Author;
     int ISBN;
+    int ID;
     string DatePublished;
     string DueDate;
     string Genre;
@@ -20,7 +21,7 @@ private:
 public:
     // Constructors
     Book();
-    Book(string title, string Author, int ISBN, string datePublished, 
+    Book(string title, string Author, int ISBN,int ID, string datePublished, 
          string dueDate, string genre, string language, string subject, bool status);
 
     // Accessors
@@ -32,6 +33,7 @@ public:
     string getDate() const;
     string getDuedate() const;
     int getISBN() const;
+    int getID() const;
     bool getStatus() const;
 
     // Mutators
@@ -43,13 +45,9 @@ public:
     void setDate(const string &datePublished);
     void setdueDate(const string &newduedate);
     void setISBN(int &isbn);
+    void setID(int &id);
     void setStatus(bool status);
 
-    // Print 
-    void printBook() const;
-
-    // Show all 
-    void showAll() const;
 };
 
 #endif 

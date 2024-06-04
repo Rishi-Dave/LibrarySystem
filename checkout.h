@@ -9,17 +9,16 @@
 class Checkout {
 private:
     std::vector<Book*> checkedOutBooks;
-    double lateFeesDue;
 
     double calculateLateFee(const std::string& dueDate) const;
 
 public:
-    Checkout() : lateFeesDue(0.0) {}
+    Checkout() : {}
 
     void checkoutBook(Catalog &catalog);
     void returnBook(Catalog &catalog);
     void viewCheckedOutBooks() const;
-    void payLateFees();
+
 };
 
 #endif 

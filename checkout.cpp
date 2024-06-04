@@ -4,11 +4,6 @@
 #include <ctime>
 #include <sstream>
 
-// Since we don't have to date right now we can not make sure about this 
-double Checkout::calculateLateFee(const string& dueDate) const {
-
-}
-
 // Function to checkout a book
 void Checkout::checkoutBook(Catalog &catalog) {
     string bookTitle;
@@ -83,16 +78,6 @@ void Checkout::returnBook(Catalog &catalog) {
         cin >> choice;
         cin.ignore();
 
-
-        if (choice == 'Y' || choice == 'y') {
-
-            double fee = calculateLateFee(book->getDueDate());
-
-            if (fee > 0) {
-                lateFeesDue += fee;
-                cout << "Late fee applied: $ " << fee << endl;
-            }
-
             book->setStatus(false); // Mark book as returned
             book->setDueDate(""); // Clear the due date
 
@@ -104,7 +89,7 @@ void Checkout::returnBook(Catalog &catalog) {
             }
             cout << "Book returned successfully.\n";
 
-        } 
+        
 
         else if (choice == 'C' || choice == 'c') {
             returnBook(catalog); // Re-prompt for ISBN
@@ -140,7 +125,3 @@ void Checkout::viewCheckedOutBooks() const {
     }
 }
 
-//late fees
-void Checkout::payLateFees() {
-// still can not set up 
-}

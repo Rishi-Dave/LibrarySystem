@@ -51,3 +51,11 @@ void Book::setID(int &id) {
 void Book::setStatus(bool status) { 
     Status = status;
 }
+
+void Book::write(std::ofstream& outputFile) {
+  outputFile << "Title: " << Title << " | Author:" << Author
+            << " | Genre:" << Genre << " | Language:" << Language 
+            << " | Subject:" <<Subject << " | Date Published:" << DatePublished 
+            << " | ISBN:" << ISBN << "| ID:" << ID << std::endl;
+  outputFile << std::endl;
+}

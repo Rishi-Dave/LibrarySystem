@@ -3,6 +3,8 @@
 
 #include <string>
 #include <iostream>
+#include <fstream> // Include header for file operations
+
 using namespace std;
 
 class Book {
@@ -35,6 +37,8 @@ public:
     int getISBN() const;
     int getID() const;
     bool getStatus() const;
+
+    void write(std::ofstream& outputFile);
 
     // Mutators
     void setTitle(const string &title);

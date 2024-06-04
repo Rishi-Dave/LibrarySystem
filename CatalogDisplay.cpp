@@ -38,3 +38,9 @@ void CatalogDisplay::printbyDate(Catalog cat){
     cat.sortbyDate();
     print(cat);
 }
+
+
+
+
+
+

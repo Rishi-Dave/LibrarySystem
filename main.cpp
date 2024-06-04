@@ -6,5 +6,7 @@ int main(){
     Catalog cat;
     CatalogDisplay printer;
    // printer.print(cat);
-    printer.printbyGenre(cat);
+   cat.store("Catalog.txt");
+    cat.sortbyAuthor();
+    cat.store("Catalog.txt");
 }

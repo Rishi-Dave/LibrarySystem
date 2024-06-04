@@ -22,6 +22,33 @@ Book* Catalog::findBook(int id){
     }
     return nullptr;
 }
+
+void Catalog::readBooksFromFile(const string& filename) {
+    ifstream file(filename);
+    if (!file) {
+        cout << "Unable to open file " << filename << endl;
+        return;
+    }
+
+    string line;
+
+    while (getline(file, line)) {
+
+        istringstream INFS(line);
+        string title, author, genre, language, subject;
+        int year, isbn, id;
+        
+        INFS >> quoted(title) >> quoted(author) >> quoted(genre) >> quoted(language) 
+            >> quoted(subject) >> year >> isbn >> id;
+        
+        Book book(title, author, genre, language, subject, year, isbn, id);
+
+        addBook(book);
+    }
+
+    file.close();
+}
+
 void Catalog::testPrint(){
     for(unsigned i = 0; i < catalog.size(); i++){
         cout << catalog.at(i).getTitle() << endl;

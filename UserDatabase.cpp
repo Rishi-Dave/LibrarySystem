@@ -20,7 +20,7 @@ void UserDatabase::writeFile() {
     write.close();
 }
 
-void UserDatabase::writeFile() {
+void UserDatabase::readFile() {
     ifstream read;
     read.open(usersFileName);
     string firstName;

@@ -20,6 +20,7 @@ class UserDatabase {
         void addUser(User user);
         void writeFile();
         void readFile();
+        bool removeBook(int id);
 };
 
 #endif

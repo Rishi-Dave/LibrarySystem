@@ -8,4 +8,7 @@ ADD_EXECUTABLE(runMain
     user.cpp
     UserDatabase.cpp
     userDisplay.cpp
+    Catalog.cpp
+    AdminUser.cpp
+    AdminDisplay.cpp
 )

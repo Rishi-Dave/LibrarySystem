@@ -1,4 +1,5 @@
 #include "user.h"
+#include "book.h"
 #include <iostream>
 #include "book.h"
 
@@ -17,6 +18,13 @@ void User::payFees(double payment){
     }
 }
 
+
+void User::populatebooks(){
+    for(unsigned i = 0; i<5; i++){
+        Book newbook;
+        checkedBooks.push_back(newbook);
+    }
+}
 std::string User::getUserInfo(){
     std::string output = "";
     output = output + firstName + " ";
@@ -31,7 +39,7 @@ std::string User::getUserInfo(){
     }
     for(unsigned i = 0; i < checkedBooks.size(); i++){
         output+= checkedBooks.at(i).getID();
-        output += " ";
+        output += " ";   
     }
 
     return output;

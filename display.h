@@ -4,6 +4,8 @@
 
 #include "UserDatabase.h"
 
+#include "user.h"
+
 #include <iostream>
 #include <vector>
 

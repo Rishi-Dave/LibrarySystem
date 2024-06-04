@@ -2,11 +2,11 @@
 
 
 // Constructors
-Book::Book() : Title(""), Author(""), ISBN(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false) {}
+Book::Book() : Title(""), Author(""), ISBN(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false), ID(0){}
 
 Book::Book(string title, string author, int isbn, string datePublished, 
-           string dueDate, string genre, string language, string subject, bool status)
-    : Title(title), Author(author), ISBN(isbn), DatePublished(datePublished), DueDate(dueDate), Genre(genre), Language(language), Subject(subject), Status(status) {}
+           string dueDate, string genre, string language, string subject, bool status, int id) 
+        : Title(title), Author(author), ISBN(isbn), DatePublished(datePublished), DueDate(dueDate), Genre(genre), Language(language), Subject(subject), Status(status), ID(id){}
 
 // Accessors
 string Book::getTitle() const { return Title; }
@@ -18,7 +18,7 @@ string Book::getDate() const { return DatePublished; }
 string Book::getDuedate() const {return DueDate; }
 int Book::getISBN() const { return ISBN; }
 bool Book::getStatus() const { return Status; }
-
+int Book::getID() const { return ID; }
 // Mutators
 void Book::setTitle(const string &title) { 
     Title = title; 
@@ -48,6 +48,9 @@ void Book::setStatus(bool status) {
     Status = status;
 }
 
+void Book::setID(int &id) { 
+    ID = id;
+}
 // Print Book  | author | Genre | Language |SubJect | Date Published | ISBN 
 //Due Date:
 void Book::printBook() const {
@@ -62,3 +65,4 @@ void Book::showAll() const {
         cout << " | Due Date: " << DueDate << endl;
     }
 }
+

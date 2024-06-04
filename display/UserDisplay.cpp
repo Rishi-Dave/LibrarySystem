@@ -1,9 +1,6 @@
-#include "userDisplay.h"
-#include "BookDisplay.h"
-#include "book.h"
-#include "user.h"
-#include <iostream>
-//#include <vector>
+#include "include/UserDisplay.h"
+#include "include/BookDisplay.h"
+
 
 void userDisplay::showAll(User user){
     std::cout<<"Username: "<< user.getUserName()<<std::endl;

@@ -1,14 +1,5 @@
-#ifndef ADMINUSER_H
-#define ADMINUSER_H
-
-#include <iostream>
-#include <string>
-
-#include "user.h"
-#include "book.h"
 #include "UserDatabase.h"
 #include "Catalog.h"
-using namespace std;
 
 class AdminUser : public User{
     private:
@@ -21,4 +12,3 @@ class AdminUser : public User{
         Book* findBook(int id);
 };
 
-#endif

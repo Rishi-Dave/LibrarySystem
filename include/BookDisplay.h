@@ -1,5 +1,4 @@
-#pragma once
-#include "book.h"
+#include "Book.h"
 class BookDisplay{
     public:
         // Print 

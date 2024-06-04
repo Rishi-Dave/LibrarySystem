@@ -1,22 +1,9 @@
-#include "Catalog.h"
+#include "include/Catalog.h"
 
    //testing only//////   //testing only//////   //testing only//////
     //testing only//////   //testing only//////   //testing only//////
 void Catalog::populatecatalog(){
-    Book book1("The Great Gatsby", "F. Scott Fitzgerald", 9780743273565, 1, "1925", "", "Fiction", "English", "20th Century Literature", false);
-    Book book2("To Kill a Mockingbird", "Harper Lee", 9780061120084, 2, "1960", "", "Fiction", "English", "Civil Rights", false);
-    Book book3("1984", "George Orwell", 9780451524935, 3, "1949", "", "Dystopian", "English", "Political Fiction", false);
-    Book book4("Pride and Prejudice", "Jane Austen", 9781503290563, 4, "1813", "", "Romance", "English", "19th Century Literature", false);
-    Book book5("Moby-Dick", "Herman Melville", 9781503280786, 5, "1851", "", "Adventure", "English", "Maritime Fiction", false);
-    Book book6("War and Peace", "Leo Tolstoy", 9781853260629, 6, "1869", "", "Historical Fiction", "Russian", "Napoleonic Wars", false);
-    Book book7("The Catcher in the Rye", "J.D. Salinger", 9780316769488, 7, "1951", "", "Fiction", "English", "Coming-of-Age", false);
-    catalog.push_back(book1);
-    catalog.push_back(book2);
-    catalog.push_back(book3);
-    catalog.push_back(book4);
-    catalog.push_back(book5);
-    catalog.push_back(book6);
-    catalog.push_back(book7);
+    
 }
 
 
@@ -139,13 +126,13 @@ void Catalog::store(const std::string& filename) {
 
 
 void Catalog::addBook(string Title, string author, int isbn, string dataPublished, string genre, string language, string subject, int id){
-    Book newBook(Title, author, isbn, dataPublished, "", genre, language, subject, false);
+    Book newBook(Title, author, isbn, dataPublished, "", genre, language, subject, false, id);
     catalog.push_back(newBook);
 }
 
 void Catalog::removeBook(int id){
     for(unsigned i = 0; i < catalog.size(); i++){
-        if(catalog.at(i).getISBN() == id){ //change to get ID
+        if(catalog.at(i).getID() == id){ //change to get ID
             catalog.erase(catalog.begin() + i);
             return;
         }
@@ -154,13 +141,13 @@ void Catalog::removeBook(int id){
 
 Book* Catalog::findBook(int id){
     for(unsigned i = 0; i < catalog.size(); i++){
-        if(catalog.at(i).getISBN() == id){ //change to  get ID
+        if(catalog.at(i).getID() == id){ //change to  get ID
             return &catalog.at(i);
         }
     }
     return nullptr;
 }
-
+/*
 void Catalog::readBooksFromFile(const string& filename) {
     ifstream file(filename);
     if (!file) {
@@ -186,7 +173,7 @@ void Catalog::readBooksFromFile(const string& filename) {
 
     file.close();
 }
-
+*/
 void Catalog::testPrint(){
     for(unsigned i = 0; i < catalog.size(); i++){
         cout << catalog.at(i).getTitle() << endl;

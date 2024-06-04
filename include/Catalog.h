@@ -1,13 +1,5 @@
-#pragma once
-#ifndef CATALOG_H
-#define CATALOG_H
+#include "Book.h"
 
-#include "book.h"
-
-#include <iostream>
-#include <vector>
-
-using namespace std;
 
 class Catalog {
     private:
@@ -34,5 +26,3 @@ class Catalog {
         //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////
         void populatecatalog();
 };
-
-#endif

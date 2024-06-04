@@ -4,12 +4,7 @@
 
 #include "UserDatabase.h"
 
-#include "user.h"
-
-#include <iostream>
-#include <vector>
-
-using namespace std;
+#include "User.h"
 
 class Display {
     public:

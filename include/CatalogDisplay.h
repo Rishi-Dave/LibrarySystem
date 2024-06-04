@@ -1,4 +1,3 @@
-#pragma once
 #include "Catalog.h"
 
 class CatalogDisplay{

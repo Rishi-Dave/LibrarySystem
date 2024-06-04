@@ -1,10 +1,9 @@
-#ifndef BOOK_H
-#define BOOK_H
-
+#pragma once
 #include <string>
 #include <iostream>
 #include <fstream> // Include header for file operations
-
+#include <vector>
+#include <sstream>
 using namespace std;
 
 class Book {
@@ -63,5 +62,3 @@ public:
     // Show all 
     void showAll() const;
 };
-
-#endif 

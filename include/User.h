@@ -1,8 +1,4 @@
-#pragma once
-#include "book.h"
-#include <iostream>
-#include <vector>
-#include "book.h"
+#include "Book.h"
 
 class User{
     protected:

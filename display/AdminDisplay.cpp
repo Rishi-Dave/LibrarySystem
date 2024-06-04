@@ -1,9 +1,5 @@
-#include "AdminDisplay.h"
-#include <iostream>
-#include <string>
+#include "include/AdminDisplay.h"
 #include <algorithm>
-
-using namespace std;
 
 // Helper function to trim leading and trailing spaces
 string trim(const string& str) {
@@ -11,6 +7,18 @@ string trim(const string& str) {
     if (first == string::npos) return "";
     size_t last = str.find_last_not_of(' ');
     return str.substr(first, last - first + 1);
+}
+string getInput(const string& prompt) {
+    string input;
+    while (true) {
+        std::cout << prompt;
+        getline(cin, input);
+        input = trim(input);
+        if (!input.empty()) {
+            return input;
+        }
+        std::cout << "Input cannot be empty. Please enter a valid value." << endl;
+    }
 }
 
 void AdminDisplay::addBook(AdminUser* admin) {
@@ -30,18 +38,7 @@ void AdminDisplay::addBook(AdminUser* admin) {
     cout << "Input “n/a” if the field is unknown or unapplicable" << endl;
     cout << "--------------------------------------------------" << endl;
 
-    auto getInput = [](const string& prompt) {
-        string input;
-        while (true) {
-            cout << prompt;
-            getline(cin, input);
-            input = trim(input);
-            if (!input.empty()) {
-                return input;
-            }
-            cout << "Input cannot be empty. Please enter a valid value." << endl;
-        }
-    };
+    
 
     title = getInput("Enter Title: ");
     author = getInput("Enter Author: ");

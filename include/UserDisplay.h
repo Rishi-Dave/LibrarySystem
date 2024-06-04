@@ -1,6 +1,4 @@
-#pragma once
-
-#include "user.h"
+#include "User.h"
 class userDisplay{
     public:
         void showAll(User);

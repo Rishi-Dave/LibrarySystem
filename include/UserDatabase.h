@@ -1,11 +1,4 @@
-#ifndef USERDATABASE_H
-#define USERDATABASE_H
-
-#include <vector>
-#include <string>
-#include <fstream>
-using namespace std;
-#include "user.h"
+#include "User.h"
 
 class UserDatabase {
     private:
@@ -22,5 +15,3 @@ class UserDatabase {
         void readFile();
         bool removeBook(int id);
 };
-
-#endif

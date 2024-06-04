@@ -1,4 +1,4 @@
-#include "display.h"
+#include "include/Display.h"
 
 void Display::displayAdmin() {
     cout << "Welcome To Our Library Management System!!!" << endl << endl;

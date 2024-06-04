@@ -1,4 +1,7 @@
 #include "userDisplay.h"
+#include "BookDisplay.h"
+#include "book.h"
+#include "user.h"
 #include <iostream>
 //#include <vector>
 
@@ -11,7 +14,6 @@ void userDisplay::showAll(User user){
         std::cout<< "Checked Books: "<<std::endl;
         checkedbooks(user); 
     }
-
 }
 
 void userDisplay::printName(User user){
@@ -22,11 +24,11 @@ void userDisplay::showbalance(User user){
     std::cout<<"$"<<user.getBalance();
 }
 
-/*
+
 void userDisplay::checkedbooks(User user){
-   std::vector<Book> books = *(user.vectorPointer());
+    BookDisplay bookprinter;
+    std::vector<Book> books = *(user.vectorPointer());
     for(unsigned int i =0 ;i < books.size(); i++){
-        books.at(i).printBook();  
+        bookprinter.printBook(books.at(i)) ;
     }
 }
-*/

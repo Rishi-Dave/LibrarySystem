@@ -56,7 +56,6 @@ public:
     void setStatus(bool status);
     void setID(int &id);
 
-
     
     // Print 
     void printBook() const;

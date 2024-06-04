@@ -1,4 +1,6 @@
 #include "user.h"
+#include <string>
+
 #include "book.h"
 #include <iostream>
 #include "book.h"
@@ -9,6 +11,9 @@ User::User(std::string first, std::string last, std::string uname, double balanc
     userName=uname;
     fees=balance;
     password = key;
+
+    //remove this test function later
+    populatebooks();
 }
 
 void User::payFees(double payment){

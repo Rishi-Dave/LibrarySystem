@@ -1,4 +1,5 @@
 #pragma once
+#include "book.h"
 #include <iostream>
 #include <vector>
 
@@ -26,6 +27,8 @@ class User{
         void payFees(double payment);
         void checkoutBooks(int ID); 
         void returnBook (int ID);
+
+        
         //testing purposes
         void populatebooks();
         std::string getUserInfo();

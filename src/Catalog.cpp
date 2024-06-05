@@ -160,6 +160,15 @@ Book* Catalog::findBook(int id){
     }
     return nullptr;
 }
+
+Book* Catalog::findBook(string title){
+    for(unsigned i = 0; i < catalog.size(); i++){
+        if(catalog.at(i).getTitle() == title){ //change to  get ID
+            return &catalog.at(i);
+        }
+    }
+    return nullptr;
+}
 /*
 void Catalog::readBooksFromFile(const string& filename) {
     ifstream file(filename);

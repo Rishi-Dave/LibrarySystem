@@ -1,6 +1,6 @@
 #pragma once
 
-#include "Book.h"
+#include "Catalog.h"
 
 class User{
     protected:
@@ -10,9 +10,10 @@ class User{
         double fees;
         std::string password;
         std::vector<Book> checkedBooks;
+        Catalog* catalog;
     public:
         //constructor
-         User(std::string first, std::string last, std::string uname, double balance,std::string key);
+        User(std::string first, std::string last, std::string uname, double balance,std::string key, Catalog* theCatalog);
         //accessors
         std::string getFirstName(){ return firstName;};
         std::string getLastName(){ return lastName;};
@@ -24,9 +25,9 @@ class User{
         void setLastName(std::string newName){ lastName = newName;}
         //functions
         void payFees(double payment);
-        void checkoutBook(int ID); 
+        void checkoutBook(Book book); 
         void returnBook (int ID);
-
+        Book* findBook(string title);
         
         //testing purposes
         void populatebooks();

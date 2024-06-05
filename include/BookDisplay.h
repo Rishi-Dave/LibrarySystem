@@ -1,3 +1,4 @@
+#pragma once
 #include "Book.h"
 class BookDisplay{
     public:

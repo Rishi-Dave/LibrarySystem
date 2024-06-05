@@ -11,7 +11,6 @@ private:
     string Title;
     string Author;
     int ISBN;
-    int ID;
     string DatePublished;
     string DueDate;
     string Genre;
@@ -38,7 +37,6 @@ public:
     int getISBN() const;
     int getID() const;
     bool getStatus() const;
-    int getID() const;
 
     void write(std::ofstream& outputFile);
 
@@ -51,7 +49,6 @@ public:
     void setDate(const string &datePublished);
     void setdueDate(const string &newduedate);
     void setISBN(int &isbn);
-    void setID(int &id);
     void setStatus(bool status);
     void setID(int &id);
 

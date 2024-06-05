@@ -1,4 +1,4 @@
-#include "include/AdminUser.h"
+#include "../include/AdminUser.h"
 
 AdminUser::AdminUser(string first, string last, string uname, double balance, string key, Catalog &theCatalog)
     : User{first, last, uname, balance, key}

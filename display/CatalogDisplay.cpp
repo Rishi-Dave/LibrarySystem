@@ -1,5 +1,5 @@
-#include "include/CatalogDisplay.h"
-#include "include/BookDisplay.h"
+#include "../include/CatalogDisplay.h"
+#include "../include/BookDisplay.h"
 
 void CatalogDisplay::print(Catalog cat){
     BookDisplay printer;

@@ -1,10 +1,9 @@
-#ifndef DISPLAY_H
-#define DISPLAY_H
+#pragma once
+
 
 
 #include "UserDatabase.h"
 
-#include "User.h"
 
 class Display {
     public:
@@ -17,4 +16,3 @@ class Display {
         void printWelcomeMessage();
 };
 
-#endif

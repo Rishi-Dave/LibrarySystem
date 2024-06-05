@@ -1,3 +1,5 @@
+#pragma once
+
 #include "User.h"
 class userDisplay{
     public:

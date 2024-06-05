@@ -1,4 +1,4 @@
-#include "include/Display.h"
+#include "../include/Display.h"
 
 void Display::displayAdmin() {
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
@@ -74,7 +74,7 @@ void Display::printWelcomeMessage() {
         }
         
         cout << endl;
-        userDB.login(userName, password);
+        //userDB.login(userName, password);
     }
     
     if (input == "s") {
@@ -106,7 +106,7 @@ void Display::printWelcomeMessage() {
         
 
         if (confirm == "Y") {
-            userDB.signup(firstName, lastName, userName, password);
+            // userDB.signup(firstName, lastName, userName, password);
         }
         else if (confirm == "N") {
             printWelcomeMessage();

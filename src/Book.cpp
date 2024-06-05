@@ -1,9 +1,9 @@
-#include "include/Book.h"
+#include "../include/Book.h"
 
 
 // Constructors
 
-Book::Book() : Title(""), Author(""), ISBN(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false), ID(0){}
+Book::Book() : Title(""), Author(""), ISBN(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false), ID(0){};
 
 Book::Book(string title, string author, int isbn, string datePublished, 
            string dueDate, string genre, string language, string subject, bool status, int id) 
@@ -18,7 +18,6 @@ string Book::getGenre() const { return Genre; }
 string Book::getDate() const { return DatePublished; }
 string Book::getDuedate() const {return DueDate; }
 int Book::getISBN() const { return ISBN; }
-int Book::getID() const{return ID;}
 bool Book::getStatus() const { return Status; }
 int Book::getID() const { return ID; }
 // Mutators
@@ -61,21 +60,4 @@ void Book::write(std::ofstream& outputFile) {
   outputFile << std::endl;
 }
 
-void Book::setID(int &id) { 
-    ID = id;
-}
-// Print Book  | author | Genre | Language |SubJect | Date Published | ISBN 
-//Due Date:
-void Book::printBook() const {
-    cout << "Book: " << Title << " | Author:" << Author << " | Genre:" << Genre << " | Language:" << Language << " | Subject:" << Subject << " | Date Published:" << DatePublished << " | ISBN:" << ISBN << endl;
-    cout << endl;
-}
-
-// Show all function
-void Book::showAll() const {
-    cout << "Book: " << Title << " | Author:" << Author << " | Genre:" << Genre << " | Language:" << Language << " | Subject:" << Subject << " | Date Published:" << DatePublished << " | ISBN:" << ISBN << endl;
-    if (Status) {
-        cout << " | Due Date: " << DueDate << endl;
-    }
-}
 

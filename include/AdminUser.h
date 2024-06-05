@@ -1,3 +1,5 @@
+#pragma once
+
 #include "UserDatabase.h"
 #include "Catalog.h"
 

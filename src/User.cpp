@@ -25,6 +25,7 @@ void User::populatebooks(){
         checkedBooks.push_back(newbook);
     }
 }
+
 std::string User::getUserInfo(){
     std::string output = "";
     output = output + firstName + " ";
@@ -38,7 +39,7 @@ std::string User::getUserInfo(){
         output+= "N ";
     }
     for(unsigned i = 0; i < checkedBooks.size(); i++){
-        output+= checkedBooks.at(i).getID();
+        output+= to_string(checkedBooks.at(i).getID());
         output += " ";   
     }
 

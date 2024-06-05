@@ -1,7 +1,7 @@
 #include "../include/UserDatabase.h"
 
 UserDatabase::UserDatabase(){
-    usersFileName = "Users.txt";
+    usersFileName = "storage/Users.txt";
     // readFile();
     loggedIn = false;
     curUser = nullptr;

@@ -3,7 +3,7 @@
 
 // Constructors
 
-Book::Book() : Title(""), Author(""), ISBN(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false), ID(0){};
+Book::Book() : Title("dune"), Author(""), ISBN(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false), ID(1){};
 
 Book::Book(string title, string author, int isbn, string datePublished, 
            string dueDate, string genre, string language, string subject, bool status, int id) 
@@ -20,6 +20,7 @@ string Book::getDuedate() const {return DueDate; }
 int Book::getISBN() const { return ISBN; }
 bool Book::getStatus() const { return Status; }
 int Book::getID() const { return ID; }
+
 // Mutators
 void Book::setTitle(const string &title) { 
     Title = title; 

@@ -1,7 +1,4 @@
 #pragma once
-
-
-
 #include "UserDatabase.h"
 
 
@@ -10,6 +7,6 @@ class Display {
         void displayAdmin();     
         void displayWelcome(string pageName);
         void displayInputPrompt(int step);
-        void printWelcomeMessage();
+        void printWelcomeMessage(UserDatabase &database);
 };
 

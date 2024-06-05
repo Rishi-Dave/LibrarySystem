@@ -19,6 +19,7 @@ class User{
         std::string getLastName(){ return lastName;};
         double getBalance(){ return fees;};
         std::string getUserName(){ return userName;};
+        std::string getPassword(){return password;};
         std::vector<Book>* vectorPointer(){return &checkedBooks;};
         //mutators 
         void setFirstName(std::string newName){ firstName = newName;}

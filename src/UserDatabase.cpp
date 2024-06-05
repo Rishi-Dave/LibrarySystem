@@ -49,3 +49,18 @@ void UserDatabase::readFile(Catalog* catalog) {
     }
     read.close();
 }
+
+bool UserDatabase::login(string userName, string password){
+    for(unsigned i =0; i<userList.size();i++){
+        if(userList.at(i).getUserName() == userName){
+            if(userList.at(i).getPassword() == password){
+                return true;
+                curUser = &userList.at(i);
+            }
+            else{
+                return false;
+            }
+        }
+    }
+    return false;
+}

@@ -51,6 +51,32 @@ void User::checkoutBook(Book book){
     return;
 }
 
+void User::returnBook(string title){
+    vector<Book>* books = catalog->vectorPointer();
+    for(unsigned i = 0; i < books->size(); i++){
+        if(books->at(i).getTitle() == title){
+            books->at(i).setStatus(false);
+            break;
+        }
+    }
+    for(unsigned i = 0; i < checkedBooks.size(); i++){
+        if(checkedBooks.at(i).getTitle() == title){
+            checkedBooks.erase(checkedBooks.begin()+i);
+            return;
+        }   
+    }
+}
+
 Book* User::findBook(string title){
     return catalog->findBook(title);    
 }
+
+Book* User::findMyBook(string title){
+    for(unsigned i = 0; i < checkedBooks.size(); i++){
+        if(checkedBooks.at(i).getTitle() == title){
+            return &checkedBooks.at(i);
+        }   
+    }
+    return nullptr;
+}
+

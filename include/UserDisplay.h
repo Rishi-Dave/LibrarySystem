@@ -11,5 +11,6 @@ class UserDisplay{
         void showbalance(User);
         void checkedbooks(User);
         void checkout(User* user);
+        void returnBook(User* user);
 };
 

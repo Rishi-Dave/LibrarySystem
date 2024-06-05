@@ -27,9 +27,9 @@ class User{
         //functions
         void payFees(double payment);
         void checkoutBook(Book book); 
-        void returnBook (int ID);
+        void returnBook (string title);
         Book* findBook(string title);
-        
+        Book* findMyBook(string title);
         //testing purposes
         void populatebooks();
         std::string getUserInfo();

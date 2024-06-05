@@ -7,7 +7,7 @@ UserDatabase::UserDatabase(){
     curUser = nullptr;
 }
 
-void UserDatabase::addUser(User user){
+void UserDatabase::addUser(User* user){
     userList.push_back(user);
 }
 
@@ -15,12 +15,12 @@ void UserDatabase::writeFile() {
     ofstream write;
     write.open(usersFileName);
     for(unsigned i = 0; i < userList.size(); i++){
-        write << userList.at(i).getUserInfo() << endl;
+        write << userList.at(i)->getUserInfo() << endl;
     }
     write.close();
 }
 
-void UserDatabase::readFile() {
+void UserDatabase::readFile(Catalog* catalog) {
     ifstream read;
     read.open(usersFileName);
     string firstName;
@@ -32,7 +32,7 @@ void UserDatabase::readFile() {
         read >> lastName;
         read >> userName;
         read >> password;
-        User newUser = User(firstName, lastName, userName, 0, password);
+        User newUser = User(firstName, lastName, userName, 0, password, catalog);
         read >> booksYesNo;
         if(booksYesNo == "Y"){
             string bookID;
@@ -41,10 +41,11 @@ void UserDatabase::readFile() {
                     break;
                 }
                 int ID = stoi(bookID);
-                // newUser.checkoutBook(ID);
+                Book* myBook = newUser.findBook(bookID);
+                newUser.checkoutBook(*myBook);
             }
         }
-        addUser(newUser);
+        addUser(&newUser);
     }
     read.close();
 }

@@ -3,9 +3,9 @@
 
 void CatalogDisplay::print(Catalog cat){
     BookDisplay printer;
-    vector<Book> vect = *(cat.vectorPointer());
-    for(unsigned i; i<vect.size();i++){
-        printer.printBook(vect.at(i));
+    vector<Book> books = *(cat.vectorPointer());
+    for(unsigned i; i<books.size();i++){
+        printer.printBook(books.at(i));
     }
 }
 

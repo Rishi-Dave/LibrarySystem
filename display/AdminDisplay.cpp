@@ -2,13 +2,13 @@
 #include <algorithm>
 
 // Helper function to trim leading and trailing spaces
-string trim(const string& str) {
+string AdminDisplay::trim(const string& str) {
     size_t first = str.find_first_not_of(' ');
     if (first == string::npos) return "";
     size_t last = str.find_last_not_of(' ');
     return str.substr(first, last - first + 1);
 }
-string getInput(const string& prompt) {
+string AdminDisplay::getInput(const string& prompt) {
     string input;
     while (true) {
         std::cout << prompt;
@@ -102,16 +102,20 @@ void AdminDisplay::removeBook(AdminUser* admin){
 
     Book* myBook = admin->findBook(id);
 
-    if(!myBook){
-        cout << "Book with that ID was not found. Did you mean to enter a different book?" << endl;
-        
+    if(!myBook || myBook->getStatus() == true){
+        if(!myBook){
+            cout << "Book with that ID was not found. Did you mean to enter a different book?" << endl;
+        }
+        else{
+            cout << "Book is already checked out by a user, you cannot remove it" << endl;
+        }
         while (true) {
             string verify;
             cout << "(Y (to reprompt)/ N (to cancel remove menu))" << endl;
             getline(cin, verify);
             
             if (verify == "Y" || verify == "y") {
-                removeBook(admin);
+                break;
             }
 
             else if (verify == "N" || verify == "n") {
@@ -121,6 +125,7 @@ void AdminDisplay::removeBook(AdminUser* admin){
                 cout << "Invalid input. Please enter Y or N." << endl;
             }
         }
+        removeBook(admin);
     }
     else{
         while (true) {

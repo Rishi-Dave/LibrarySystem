@@ -1,10 +1,11 @@
 #pragma once
 
 #include "User.h"
+#include "Catalog.h"
 
 class UserDatabase {
     private:
-        vector<User> userList;
+        vector<User*> userList;
         string usersFileName;
         bool loggedIn;
         User *curUser;
@@ -12,8 +13,8 @@ class UserDatabase {
         UserDatabase();
         bool login(string userName, string password);
         void signup(string firstName, string lastName, string userName, string password);
-        void addUser(User user);
+        void addUser(User* user);
         void writeFile();
-        void readFile();
+        void readFile(Catalog* catalog);
         bool removeBook(int id);
 };

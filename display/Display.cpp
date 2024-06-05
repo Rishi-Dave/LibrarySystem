@@ -41,7 +41,7 @@ void Display::displayInputPrompt(int step) {
 }
 
 
-void Display::printWelcomeMessage() {
+void Display::printWelcomeMessage(UserDatabase &database ) {
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
     cout << "Please Sign Into Your Account To Begin Checking Out Books!" << endl << endl;
 
@@ -58,9 +58,10 @@ void Display::printWelcomeMessage() {
     string userName;
     string password;
 
-    UserDatabase userDB;
-
-    if (input == "l") {
+    if(input != "l" && input != "s" && input != "e"){
+        printWelcomeMessage(database);
+    }
+    else if (input == "l") {
         cout << "Log In(q to exit): " << endl << endl;
 
         cout << "Enter User Name: ";
@@ -74,10 +75,13 @@ void Display::printWelcomeMessage() {
         }
         
         cout << endl;
-        //userDB.login(userName, password);
-    }
+        if(!database.login(userName, password)){
+            cout<<"User with these Credentials was not found, please try again or sign up for a new account"<<endl;
+            printWelcomeMessage(database);
+        }
     
-    if (input == "s") {
+    }
+    else if (input == "s") {
         do {
             cout << "Sign Up: " << endl << endl;
 
@@ -108,12 +112,14 @@ void Display::printWelcomeMessage() {
         if (confirm == "Y") {
             // userDB.signup(firstName, lastName, userName, password);
         }
+
         else if (confirm == "N") {
-            printWelcomeMessage();
+            printWelcomeMessage(database);
         }
     }
 
-    if (input == "e") {
+    else if (input == "e") {
         exit(1);
     }
+
 }

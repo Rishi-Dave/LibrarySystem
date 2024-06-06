@@ -7,8 +7,7 @@ User::User(std::string first, std::string last, std::string uname, double balanc
     fees=balance;
     password = key;
     catalog = theCatalog;
-    //remove this test function later
-    //populatebooks()
+    isAdmin = false;
 }
 
 void User::payFees(double payment){
@@ -18,13 +17,6 @@ void User::payFees(double payment){
     }
 }
 
-
-void User::populatebooks(){
-    for(unsigned i = 0; i<5; i++){
-        Book newbook;
-        checkedBooks.push_back(newbook);
-    }
-}
 
 std::string User::getUserInfo(){
     std::string output = "";

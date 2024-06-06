@@ -7,10 +7,15 @@ UserDatabase::UserDatabase(Catalog* catalogPointer){
     readFile(catalog);
     loggedIn = false;
     curUser = nullptr;
+    adminUser = nullptr;
 }
 
 void UserDatabase::addUser(User* user){
     userList.push_back(user);
+}
+
+void UserDatabase::addAdmin(AdminUser* admin){
+    adminList.push_back(admin);
 }
 
 void UserDatabase::writeFile() {
@@ -67,6 +72,21 @@ bool UserDatabase::login(string userName, string password){
     return false;
 }
 
+bool UserDatabase::adminLogin(string userName, string password){
+    for(unsigned i =0; i<adminList.size();i++){
+        if(adminList.at(i)->getUserName() == userName){
+            if(adminList.at(i)->getPassword() == password){
+                adminUser = adminList.at(i);
+                return true;
+            }
+            else{
+                return false;
+            }
+        }
+    }
+    return false;
+}
+
 bool UserDatabase::checkforUser(string name){
     for(unsigned i =0; i<userList.size();i++){
         if(userList.at(i)->getUserName() == name){
@@ -83,10 +103,16 @@ void UserDatabase::signup(string firstName, string lastName, string userName, st
 
 void UserDatabase::logout(){
     curUser = nullptr;
+    adminUser = nullptr;
 }
 User* UserDatabase::getCurUser(){
     return curUser;
 }
+
+AdminUser* UserDatabase::getAdminUser(){
+    return adminUser;
+}
+
 
 //testing
 void UserDatabase::printAllInfo(){

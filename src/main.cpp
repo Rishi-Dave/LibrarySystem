@@ -13,10 +13,13 @@ int main() {
     AdminDisplay adminDisplay;
     UserDisplay userDisplay;
     Display display;
-    AdminUser him("Rishi", "Dave", "rdave", 1234, "password", &catalog);
-
+    AdminUser admin("Admin", "User", "admin", 1234, "complexpassword", &catalog);
+    database.addAdmin(&admin);
     while(true){
-        if(!database.getCurUser()){
+        if(database.getAdminUser()){
+            display.displayAdmin(adminDisplay, database, catDisplay, catalog);
+        }
+        else if(!database.getCurUser()){
             display.printWelcomeMessage(database, catalog);
         }
         else{

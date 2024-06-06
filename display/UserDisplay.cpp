@@ -1,5 +1,6 @@
 #include "../include/UserDisplay.h"
 #include "../include/BookDisplay.h"
+#include "../include/CatalogDisplay.h"
 #include <algorithm>
 
 // string UserDisplay::trim(const string& str) {
@@ -164,4 +165,31 @@ void UserDisplay::returnBook(User* user){
         }
         checkout(user);
     }
+}
+
+void UserDisplay::viewCatalog(Catalog* catalog){
+    CatalogDisplay printer;
+    cout<<endl;
+    cout<< "Book Catalog:"<<endl<<endl;
+    printer.print(*catalog);
+    cout<<endl<<endl;
+    cout<<"Sort Catalog by Categories"<<endl;
+    cout<<"     ISBN (I)"<<endl;
+    cout<<"     Title (T)"<<endl;
+    cout<<"     Language (L)"<<endl;
+    cout<<"     Subject (S)"<<endl;
+    cout<<"     Genre (G)"<<endl;
+    cout<<"     Date (D)"<<endl;
+    cout<<"     go back home (e)"<<endl;
+
+
+
+
+
+        void printbyISBN(Catalog cat);
+        void printbyTitle(Catalog cat);
+        void printbyLang(Catalog cat);
+        void printbySubj(Catalog cat);
+        void printbyGenre(Catalog cat);
+        void printbyDate(Catalog cat);
 }

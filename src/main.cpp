@@ -15,6 +15,7 @@ int main() {
     UserDisplay userDisplay;
     Display display;
     AdminUser him("Rishi", "Dave", "rdave", 1234, "password", &catalog);
+
     while(true){
         if(!database.getCurUser()){
             display.printWelcomeMessage(database, catalog);

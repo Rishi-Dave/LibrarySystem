@@ -11,17 +11,17 @@ int main() {
     UserDisplay userdisplay;
     CatalogDisplay catDisplay;
     AdminDisplay adminDisplay;
-    Display dispay;
-    User user1("Atharva", "Nevasekar", "aneva", 123, "password", &catalog);
+    UserDisplay userDisplay;
+    Display display;
     AdminUser him("Rishi", "Dave", "rdave", 1234, "password", &catalog);
-    database.addUser(&user1);
-    // database.writeFile();
-    // userdisplay.checkout(&user1);
-    // database.writeFile();
-    // userdisplay.returnBook(&user1);
-    // database.writeFile();
-    
-    // dispay.printWelcomeMessage(database);
 
-    userdisplay.showAll(user1);
+    while(true){
+        if(!database.getCurUser()){
+            display.printWelcomeMessage(database, catalog);
+        }
+        else{
+            display.displayInputPrompt(userDisplay, database, catDisplay, catalog);
+        }
+    }
+    
 }

@@ -39,6 +39,10 @@ void CatalogDisplay::printbyDate(Catalog cat){
     print(cat);
 }
 
+void CatalogDisplay::printbyISBN(Catalog cat){
+    cat.sortbyISBN();
+    print(cat);
+}
 
 
 

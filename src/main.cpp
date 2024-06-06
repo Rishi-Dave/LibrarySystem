@@ -6,27 +6,22 @@
 #include "../include/Display.h"
 
 int main() {
-   
     Catalog catalog;
-     UserDatabase database(&catalog);
+    UserDatabase database(&catalog);
     UserDisplay userdisplay;
     CatalogDisplay catDisplay;
     AdminDisplay adminDisplay;
-
-    UserDisplay userDisplay;
+    Display dispay;
+    User user1("Atharva", "Nevasekar", "aneva", 123, "password", &catalog);
     AdminUser him("Rishi", "Dave", "rdave", 1234, "password", &catalog);
-    catDisplay.print(catalog);
-    database.readFile(&catalog);
-    /*
+    database.addUser(&user1);
+    // database.writeFile();
+    // userdisplay.checkout(&user1);
+    // database.writeFile();
+    // userdisplay.returnBook(&user1);
+    // database.writeFile();
     
-    database.writeFile();
-    display.checkout(&user1);
-    database.writeFile();
-    display.returnBook(&user1);
-    database.writeFile();
-    */    
-   database.printAllInfo();
-   database.login("aneva", "password");
-   userDisplay.showAll(*database.getCurUser());
+    // dispay.printWelcomeMessage(database);
 
+    userdisplay.showAll(user1);
 }

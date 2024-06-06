@@ -81,6 +81,7 @@ bool UserDatabase::checkforUser(string name){
 void UserDatabase::signup(string firstName, string lastName, string userName, string password){
     User* user1 = new User(firstName,lastName,userName,0,password,catalog);
     userList.push_back(user1);
+}
 
 User* UserDatabase::getCurUser(){
     return curUser;

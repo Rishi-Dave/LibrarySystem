@@ -3,14 +3,15 @@
 #include <algorithm>
 
 void UserDisplay::showAll(User user){
+    printPageBreak();
     std::cout<<"Username: "<< user.getUserName()<<std::endl;
     std::cout<<"Name: "<< user.getFirstName()<<" "<<user.getLastName()<<std::endl;
-    std::cout<<"Balance: $"<< user.getBalance()<<std::endl<<std::endl;
     std::vector<Book> books = *(user.vectorPointer());
     if(books.size() > 0){
         std::cout<< "Checked Books: "<<std::endl;
         checkedbooks(user); 
     }
+    printPageBreak();
 }
 
 void UserDisplay::printName(User user){

@@ -24,3 +24,9 @@ string ParentDisplay::getInput(const string& prompt) {
         std::cout << "Input cannot be empty. Please enter a valid value." << endl;
     }
 }
+
+void ParentDisplay::printPageBreak(){
+    cout<<endl;
+    cout<<"-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_-_"<<endl;
+    cout<<endl;
+}

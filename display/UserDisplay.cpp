@@ -12,7 +12,6 @@ void UserDisplay::showAll(User user){
         std::cout<< "Checked Books: "<<std::endl;
         checkedbooks(user); 
     }
-    printPageBreak();
 }
 
 void UserDisplay::printName(User user){
@@ -34,6 +33,7 @@ void UserDisplay::checkedbooks(User user){
 }
 
 void UserDisplay::checkout(User* user){
+    printPageBreak();
     string title;
     cout << "Check Out Book:" << endl << endl;
     title = getInput("Enter Book Title: ");
@@ -94,6 +94,7 @@ void UserDisplay::checkout(User* user){
 }
 
 void UserDisplay::returnBook(User* user){
+    printPageBreak();
     if(user->vectorPointer()->size() == 0){
         cout << "You have no books checked out that you can return" << endl;
         return;
@@ -154,49 +155,3 @@ void UserDisplay::returnBook(User* user){
 }
 
     
-void UserDisplay::viewCatalog(Catalog* catalog){
-        CatalogDisplay printer;
-        cout<<endl;
-        cout<< "Book Catalog:"<<endl<<endl;
-        printer.print(*catalog);
-        cout<<endl<<endl;
-        Catalog mybooks = *catalog;
-        while(true){
-            cout<<"Sort Catalog by Categories"<<endl;
-            cout<<"     ISBN (I)"<<endl;
-            cout<<"     Title (T)"<<endl;
-            cout<<"     Language (L)"<<endl;
-            cout<<"     Subject (S)"<<endl;
-            cout<<"     Genre (G)"<<endl;
-            cout<<"     Date Published (D)"<<endl;
-            cout<<"     Go back home (E)"<<endl;
-            string input = getInput("Enter Choice: ");
-                        if(input == "i" || input== "I"){
-                            printer.printbyISBN(*catalog);
-                        }
-                        else if(input == "t" || input== "T"){
-                            printer.printbyTitle(*catalog);
-                        }
-                        else if(input == "l" || input== "L"){
-                            printer.printbyLang(*catalog);
-                        }
-                        else if(input == "s" || input== "S"){
-                            printer.printbySubj(*catalog);
-                        }
-                        else if(input == "g" || input== "G"){
-                            printer.printbyGenre(*catalog);
-                        }
-                        else if(input == "d" || input== "D"){
-                            printer.printbyDate(*catalog);
-                        }
-                        else if(input == "e" || input== "E"){
-                            return;
-                        }
-                        else{
-                            cout<<endl;
-                            cout<<"Invalid input please try again"<<endl;
-                            cout<<endl;
-                            continue;
-                        }
-    }  
- }

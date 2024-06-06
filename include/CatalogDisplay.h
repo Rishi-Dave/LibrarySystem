@@ -1,8 +1,9 @@
 #pragma once
 
 #include "Catalog.h"
+#include "ParentDisplay.h"
 
-class CatalogDisplay{
+class CatalogDisplay : private ParentDisplay{
     public:
         void printbyAuthor(Catalog cat);
 
@@ -13,5 +14,6 @@ class CatalogDisplay{
         void printbyGenre(Catalog cat);
         void printbyDate(Catalog cat);
         void print(Catalog cat);
+        void viewCatalog(Catalog* catalog);
 
 };

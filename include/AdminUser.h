@@ -5,7 +5,7 @@
 
 class AdminUser : public User{
     public:
-        AdminUser(string first, string last, string uname, double balance, string key, Catalog* theCatalog);
+        AdminUser(string first, string last, string uname, string key, Catalog* theCatalog);
         void addBook(string Title, string author, int isbn, string dataPublished, string genre, string language, string subject, int id);
         void removeBook(int id);
         void editBook(int isbn);

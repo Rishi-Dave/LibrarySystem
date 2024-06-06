@@ -18,10 +18,6 @@ void UserDisplay::printName(User user){
     std::cout<<user.getFirstName();
 }
 
-void UserDisplay::showbalance(User user){
-    std::cout<<"$"<<user.getBalance();
-}
-
 
 void UserDisplay::checkedbooks(User user){
     BookDisplay bookprinter;

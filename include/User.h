@@ -14,11 +14,10 @@ class User{
         bool isAdmin;
     public:
         //constructor
-        User(std::string first, std::string last, std::string uname, double balance,std::string key, Catalog* theCatalog);
+        User(std::string first, std::string last, std::string uname,std::string key, Catalog* theCatalog);
         //accessors
         std::string getFirstName(){ return firstName;};
         std::string getLastName(){ return lastName;};
-        double getBalance(){ return fees;};
         std::string getUserName(){ return userName;};
         std::string getPassword(){return password;};
         bool getIsAdmin() { return isAdmin;};

@@ -13,7 +13,7 @@ int main() {
     AdminDisplay adminDisplay;
     UserDisplay userDisplay;
     Display display;
-    AdminUser admin("Admin", "User", "admin", 1234, "complexpassword", &catalog);
+    AdminUser admin("Admin", "User", "admin", "complexpassword", &catalog);
     database.addAdmin(&admin);
     while(true){
         if(database.getAdminUser()){

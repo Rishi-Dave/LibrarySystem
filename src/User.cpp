@@ -1,10 +1,9 @@
 #include "../include/User.h"
 
-User::User(std::string first, std::string last, std::string uname, double balance,std::string key, Catalog* theCatalog){
+User::User(std::string first, std::string last, std::string uname,std::string key, Catalog* theCatalog){
     firstName=first;
     lastName=last;
     userName=uname;
-    fees=balance;
     password = key;
     catalog = theCatalog;
     isAdmin = false;

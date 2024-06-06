@@ -1,8 +1,10 @@
 #include "../include/UserDatabase.h"
+#include <algorithm>
 
-UserDatabase::UserDatabase(){
+UserDatabase::UserDatabase(Catalog* catalogPointer){
     usersFileName = "storage/Users.txt";
-    // readFile();
+    catalog = catalogPointer;
+    readFile(catalog);
     loggedIn = false;
     curUser = nullptr;
 }
@@ -28,24 +30,24 @@ void UserDatabase::readFile(Catalog* catalog) {
     string userName;
     string password;
     string booksYesNo;
-    while(read >> firstName){
-        read >> lastName;
-        read >> userName;
-        read >> password;
-        User newUser = User(firstName, lastName, userName, 0, password, catalog);
-        read >> booksYesNo;
+    string line;
+    while(getline(read, line)){
+        istringstream ss(line);
+        ss >> firstName;
+        ss >> lastName;
+        ss >> userName;
+        ss >> password;
+        User* newUser = new User(firstName, lastName, userName, 0, password, catalog);
+        ss >> booksYesNo;
         if(booksYesNo == "Y"){
-            string bookID;
-            while(read>>bookID){
-                if(bookID == "\n"){
-                    break;
-                }
-                int ID = stoi(bookID);
-                Book* myBook = newUser.findBook(bookID);
-                newUser.checkoutBook(*myBook);
+            int bookID;
+            while(ss>>bookID){
+                Book* myBook = newUser->findBook(bookID);
+                myBook->setStatus(true);
+                newUser->checkoutBook(*myBook);
             }
         }
-        addUser(&newUser);
+        addUser(newUser);
     }
     read.close();
 }
@@ -54,8 +56,8 @@ bool UserDatabase::login(string userName, string password){
     for(unsigned i =0; i<userList.size();i++){
         if(userList.at(i)->getUserName() == userName){
             if(userList.at(i)->getPassword() == password){
-                return true;
                 curUser = userList.at(i);
+                return true;
             }
             else{
                 return false;
@@ -63,4 +65,32 @@ bool UserDatabase::login(string userName, string password){
         }
     }
     return false;
+}
+
+bool UserDatabase::checkforUser(string name){
+    for(unsigned i =0; i<userList.size();i++){
+        if(userList.at(i)->getUserName() == name){
+            return true;
+        }
+    }
+    return false;
+}
+
+void UserDatabase::signup(string firstName, string lastName, string userName, string password){
+    User* user1 = new User(firstName,lastName,userName,0,password,catalog);
+    userList.push_back(user1);
+}
+
+void UserDatabase::logout(){
+    curUser = nullptr;
+}
+User* UserDatabase::getCurUser(){
+    return curUser;
+}
+
+//testing
+void UserDatabase::printAllInfo(){
+    for(unsigned i = 0; i < userList.size(); i++){
+        cout << userList.at(i)->getUserInfo() << endl;
+    }
 }

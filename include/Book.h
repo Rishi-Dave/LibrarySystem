@@ -23,8 +23,7 @@ public:
     // Constructors
     Book();
 
-    Book(string title, string Author, int ISBN, string datePublished, 
-         string dueDate, string genre, string language, string subject, bool status, int id);
+    Book(string title, string Author, int ISBN, string datePublished, string genre, string language, string subject, bool status, int id);
 
     // Accessors
     string getTitle() const;
@@ -33,7 +32,6 @@ public:
     string getSubject() const;
     string getGenre() const;
     string getDate() const;
-    string getDuedate() const;
     int getISBN() const;
     int getID() const;
     bool getStatus() const;
@@ -47,7 +45,6 @@ public:
     void setSubject(const string &subject);
     void setGenre(const string &genre);
     void setDate(const string &datePublished);
-    void setdueDate(const string &newduedate);
     void setISBN(int &isbn);
     void setStatus(bool status);
     void setID(int &id);

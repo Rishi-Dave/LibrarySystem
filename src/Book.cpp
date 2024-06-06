@@ -3,11 +3,10 @@
 
 // Constructors
 
-Book::Book() : Title("dune"), Author(""), ISBN(0), DatePublished(""), DueDate(""), Genre(""), Language(""), Subject(""), Status(false), ID(1){};
+Book::Book() : Title("dune"), Author(""), ISBN(0), DatePublished(""), Genre(""), Language(""), Subject(""), Status(false), ID(1){};
 
-Book::Book(string title, string author, int isbn, string datePublished, 
-           string dueDate, string genre, string language, string subject, bool status, int id) 
-        : Title(title), Author(author), ISBN(isbn), DatePublished(datePublished), DueDate(dueDate), Genre(genre), Language(language), Subject(subject), Status(status), ID(id){}
+Book::Book(string title, string author, int isbn, string datePublished, string genre, string language, string subject, bool status, int id) 
+        : Title(title), Author(author), ISBN(isbn), DatePublished(datePublished), Genre(genre), Language(language), Subject(subject), Status(status), ID(id){}
 
 // Accessors
 string Book::getTitle() const { return Title; }
@@ -16,7 +15,6 @@ string Book::getLanguage() const { return Language; }
 string Book::getSubject() const { return Subject; }
 string Book::getGenre() const { return Genre; }
 string Book::getDate() const { return DatePublished; }
-string Book::getDuedate() const {return DueDate; }
 int Book::getISBN() const { return ISBN; }
 bool Book::getStatus() const { return Status; }
 int Book::getID() const { return ID; }
@@ -40,9 +38,6 @@ void Book::setGenre(const string &genre) {
 void Book::setDate(const string &datePublished) { 
     DatePublished = datePublished; 
 }
-void Book::setdueDate(const string &newduedate) { 
-    DueDate = newduedate; 
-}
 void Book::setISBN(int &isbn) { 
     ISBN = isbn;
 }
@@ -54,10 +49,10 @@ void Book::setStatus(bool status) {
 }
 
 void Book::write(std::ofstream& outputFile) {
-  outputFile << "Title: " << Title << " | Author:" << Author
-            << " | Genre:" << Genre << " | Language:" << Language 
-            << " | Subject:" <<Subject << " | Date Published:" << DatePublished 
-            << " | ISBN:" << ISBN << "| ID:" << ID << std::endl;
+  outputFile << Title << "|" << Author
+            << "|" << Genre << "|" << Language 
+            << "|" <<Subject << "|" << DatePublished 
+            << "|" << ISBN << "|" << ID << std::endl;
   outputFile << std::endl;
 }
 

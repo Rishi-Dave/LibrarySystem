@@ -8,25 +8,20 @@
 int main() {
    
     Catalog catalog;
-     UserDatabase database(&catalog);
+    UserDatabase database(&catalog);
     UserDisplay userdisplay;
     CatalogDisplay catDisplay;
     AdminDisplay adminDisplay;
-
     UserDisplay userDisplay;
+    Display display;
     AdminUser him("Rishi", "Dave", "rdave", 1234, "password", &catalog);
-    catDisplay.print(catalog);
-    database.readFile(&catalog);
-    /*
+    while(true){
+        if(!database.getCurUser()){
+            display.printWelcomeMessage(database, catalog);
+        }
+        else{
+            display.displayInputPrompt(userDisplay, database, catDisplay, catalog);
+        }
+    }
     
-    database.writeFile();
-    display.checkout(&user1);
-    database.writeFile();
-    display.returnBook(&user1);
-    database.writeFile();
-    */    
-   database.printAllInfo();
-   database.login("aneva", "password");
-   userDisplay.showAll(*database.getCurUser());
-
 }

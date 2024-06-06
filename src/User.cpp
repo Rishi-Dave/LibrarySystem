@@ -47,6 +47,7 @@ std::string User::getUserInfo(){
 }
 
 void User::checkoutBook(Book book){
+    book.setStatus(true);
     checkedBooks.push_back(book);
     return;
 }
@@ -69,6 +70,10 @@ void User::returnBook(string title){
 
 Book* User::findBook(string title){
     return catalog->findBook(title);    
+}
+
+Book* User::findBook(int id){
+    return catalog->findBook(id);    
 }
 
 Book* User::findMyBook(string title){

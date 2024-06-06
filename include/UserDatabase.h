@@ -17,4 +17,6 @@ class UserDatabase {
         void writeFile();
         void readFile(Catalog* catalog);
         bool removeBook(int id);
+        void printAllInfo();
+        User* getCurUser();
 };

@@ -13,4 +13,5 @@ ADD_EXECUTABLE(runMain
     display/BookDisplay.cpp
     display/AdminDisplay.cpp
     display/CatalogDisplay.cpp
+    display/ParentDisplay.cpp
 )

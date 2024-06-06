@@ -1,13 +1,13 @@
 #include "../include/ParentDisplay.h"
 
 string ParentDisplay::trim(const string& str) {
-    unsigned first = str.find_first_not_of(' ');
+    size_t first = str.find_first_not_of(' ');
 
     if (first == string::npos) {
         return "";
     }
 
-    unsigned last = str.find_last_not_of(' ');
+    size_t last = str.find_last_not_of(' ');
 
     return str.substr(first, last - first + 1);
 }

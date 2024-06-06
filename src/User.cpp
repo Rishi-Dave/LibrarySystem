@@ -40,7 +40,7 @@ std::string User::getUserInfo(){
     }
     for(unsigned i = 0; i < checkedBooks.size(); i++){
         output+= to_string(checkedBooks.at(i).getID());
-        output += " ";   
+        output += " ";
     }
 
     return output;

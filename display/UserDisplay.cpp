@@ -37,10 +37,14 @@ void UserDisplay::checkout(User* user){
     title = getInput("Enter Book Title: ");
 
     Book* myBook = user->findBook(title);
-    if(!myBook){
-        cout << "Book with that Title was not found. Did you mean to enter a different book?" << endl;
-        
-        while (true) {
+    if(!myBook || myBook->getStatus()){
+        if(myBook){
+            cout << "Book with that Title was already checked out. Did you want to check out another book?" << endl;
+        }
+        else{
+            cout << "Book with that Title was not found. Did you mean to enter a different book?" << endl;
+        }
+        while (true ) {
             string verify;
             cout << "(Y (to reprompt)/ N (to cancel checkout menu))" << endl;
             getline(cin, verify);

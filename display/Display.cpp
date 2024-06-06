@@ -10,38 +10,48 @@ void Display::displayAdmin() {
 }
 
 
-void Display::displayWelcome(string pageName) {
-    cout << "Welcome To Our Library Management System!!!" << endl << endl;
-    cout << "Please Sign Into Your Account To Begin Checking Out Books!" << endl << endl;
-
-    cout << "> Login(l)" << endl;
-    cout << "> Sign up(s)" << endl;
-    cout << "> exit(e)" << endl;
-}
-
-void Display::displayInputPrompt(int step) {
+void Display::displayInputPrompt(UserDisplay& userDisplay, UserDatabase& database, CatalogDisplay& catDisplay, Catalog& catalog) {
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
     cout << "What would you like to do?" << endl << endl;
 
     // 2 C?
-    cout << "> View Account Info(a)" << endl;
-    cout << "> View Book Catalog(c)" << endl;
-    cout << "> View My Checked Out Books(m)" << endl;
+    cout << "> View Account Info and Checked Books(a)" << endl;
+    cout << "> View Book Catalog(v)" << endl;
     cout << "> Checkout A Book(c)" << endl;
     cout << "> Return a Book(r)" << endl;
-    cout << "> Pay/View Late Fees(f)" << endl;
+    cout << "> Logout(l)" << endl;
     cout << "> exit(e)" << endl;
 
-    string input;
-    
-    while (input != "a" || input != "c" || input != "m" || input != "c" || input != "r" || input != "f" || input != "e") {
-        cout << "Please enter a correct input"; // need to be specific
-        cin >> input;
+    string input = getInput("");
+    while (input != "a" && input != "A" && input != "v" && input != "V" && input != "l" && input != "L" && input != "c" 
+    && input != "C" && input != "r" && input != "R" && input != "f" && input != "F" && input != "e" && input != "E") {
+        input = getInput("");
+        cout << "Please enter a correct input" << endl;
+    }
+    if(input == "a" || input == "A"){
+        userDisplay.showAll(*database.getCurUser());
+    }
+    else if(input == "v" || input == "V"){
+        catDisplay.print(catalog);
+    }
+    else if(input == "c" || input == "C"){
+        userDisplay.checkout(database.getCurUser());
+    }
+    else if(input == "r" || input == "R"){
+        userDisplay.returnBook(database.getCurUser());
+    }
+    else if(input == "l" || input == "l"){
+        database.logout();
+    }
+    else if(input == "e" || input == "E"){
+        catalog.store("include/Catalog.txt");
+        database.writeFile();
+        exit(1);
     }
 }
 
 
-void Display::printWelcomeMessage(UserDatabase &database) {
+void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
     cout << "Please Sign Into Your Account To Begin Checking Out Books!" << endl << endl;
 
@@ -59,7 +69,6 @@ void Display::printWelcomeMessage(UserDatabase &database) {
     string password2;
 
     if(input != "l" && input != "s" && input != "e" && input != "L" && input != "S" && input != "E"){
-        printWelcomeMessage(database);
         return;
     }
     else if (input == "l"|| input == "L") {
@@ -68,21 +77,18 @@ void Display::printWelcomeMessage(UserDatabase &database) {
         userName = getInput("Enter User Name: ");
         
          if (userName == "q") {
-            printWelcomeMessage(database);
             return;
         }
 
         password = getInput("Enter Password: ");
 
         if (password == "q") {
-            printWelcomeMessage(database);
             return;
         }
         
         cout << endl;
         if(!database.login(userName, password)){
             cout<<"User with these Credentials was not found, please try again or sign up for a new account"<<endl;
-            printWelcomeMessage(database);
             return;
         }
     }
@@ -131,17 +137,17 @@ void Display::printWelcomeMessage(UserDatabase &database) {
         if (confirm == "Y" || confirm == "y") {
             database.signup(firstName, lastName, userName, password);
             cout<<"Your acount has been created you now login"<<endl<<endl;
-            printWelcomeMessage(database);
             return;
         }
 
         else if (confirm == "N"|| confirm == "n") {
-            printWelcomeMessage(database);
             return;
         }
     }
 
-    else if (input == "e") {
+    else if (input == "e" || input == "E") {
+        catalog.store("include/Catalog.txt");
+        database.writeFile();
         exit(1);
     }
 

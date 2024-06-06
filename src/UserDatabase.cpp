@@ -1,8 +1,10 @@
 #include "../include/UserDatabase.h"
+#include <algorithm>
+
 UserDatabase::UserDatabase(Catalog* catalogPointer){
     usersFileName = "storage/Users.txt";
     catalog = catalogPointer;
-    // readFile();
+    readFile(catalog);
     loggedIn = false;
     curUser = nullptr;
 }
@@ -21,7 +23,6 @@ void UserDatabase::writeFile() {
 }
 
 void UserDatabase::readFile(Catalog* catalog) {
-    cout << "starts" << endl;
     ifstream read;
     read.open(usersFileName);
     string firstName;
@@ -29,27 +30,23 @@ void UserDatabase::readFile(Catalog* catalog) {
     string userName;
     string password;
     string booksYesNo;
-    while(read >> firstName){
-        cout << "loop runs, " << firstName << endl;
-        read >> lastName;
-        read >> userName;
-        read >> password;
+    string line;
+    while(getline(read, line)){
+        istringstream ss(line);
+        ss >> firstName;
+        ss >> lastName;
+        ss >> userName;
+        ss >> password;
         User* newUser = new User(firstName, lastName, userName, 0, password, catalog);
-        cout << "user created" << endl;
-        read >> booksYesNo;
+        ss >> booksYesNo;
         if(booksYesNo == "Y"){
-            string bookID;
-            while(read>>bookID){
-                if(bookID == "\n"){
-                    break;
-                }
-                int ID = stoi(bookID);
-                cout << ID << endl;
-                Book* myBook = newUser->findBook(ID);
+            int bookID;
+            while(ss>>bookID){
+                Book* myBook = newUser->findBook(bookID);
+                myBook->setStatus(true);
                 newUser->checkoutBook(*myBook);
             }
         }
-        cout << "books added" << endl;
         addUser(newUser);
     }
     read.close();
@@ -60,6 +57,7 @@ bool UserDatabase::login(string userName, string password){
         if(userList.at(i)->getUserName() == userName){
             if(userList.at(i)->getPassword() == password){
                 curUser = userList.at(i);
+                return true;
             }
             else{
                 return false;
@@ -81,7 +79,11 @@ bool UserDatabase::checkforUser(string name){
 void UserDatabase::signup(string firstName, string lastName, string userName, string password){
     User* user1 = new User(firstName,lastName,userName,0,password,catalog);
     userList.push_back(user1);
+}
 
+void UserDatabase::logout(){
+    curUser = nullptr;
+}
 User* UserDatabase::getCurUser(){
     return curUser;
 }

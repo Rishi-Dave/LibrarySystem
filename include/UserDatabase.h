@@ -20,6 +20,7 @@ class UserDatabase {
         bool removeBook(int id);
         bool checkforUser(string name);
         void printAllInfo();
+        void logout();
         User* getCurUser();
 };
 

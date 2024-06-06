@@ -3,13 +3,16 @@
 #include "../include/UserDisplay.h"
 #include "../include/CatalogDisplay.h"
 #include "../include/AdminDisplay.h"
+#include "../include/Display.h"
 
 int main() {
-    UserDatabase database;
+   
     Catalog catalog;
-    UserDisplay display;
+     UserDatabase database(&catalog);
+    UserDisplay userdisplay;
     CatalogDisplay catDisplay;
     AdminDisplay adminDisplay;
+
     UserDisplay userDisplay;
     AdminUser him("Rishi", "Dave", "rdave", 1234, "password", &catalog);
     catDisplay.print(catalog);
@@ -25,4 +28,5 @@ int main() {
    database.printAllInfo();
    database.login("aneva", "password");
    userDisplay.showAll(*database.getCurUser());
+
 }

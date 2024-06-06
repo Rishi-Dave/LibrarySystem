@@ -41,7 +41,7 @@ void Display::displayInputPrompt(int step) {
 }
 
 
-void Display::printWelcomeMessage(UserDatabase &database ) {
+void Display::printWelcomeMessage(UserDatabase &database) {
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
     cout << "Please Sign Into Your Account To Begin Checking Out Books!" << endl << endl;
 
@@ -49,72 +49,95 @@ void Display::printWelcomeMessage(UserDatabase &database ) {
     cout << "> Sign up(s)" << endl;
     cout << "> exit(e)" << endl;
 
-    string input;
-    cin >> input;
+    string input = getInput("");
 
     string confirm;
     string firstName;
     string lastName;
     string userName;
     string password;
+    string password2;
 
-    if(input != "l" && input != "s" && input != "e"){
+    if(input != "l" && input != "s" && input != "e" && input != "L" && input != "S" && input != "E"){
         printWelcomeMessage(database);
+        return;
     }
-    else if (input == "l") {
+    else if (input == "l"|| input == "L") {
         cout << "Log In(q to exit): " << endl << endl;
 
-        cout << "Enter User Name: ";
-        cin >> userName;
+        userName = getInput("Enter User Name: ");
+        
+         if (userName == "q") {
+            printWelcomeMessage(database);
+            return;
+        }
 
-        cout << "Enter Password: ";
-        cin >> password;
+        password = getInput("Enter Password: ");
 
-        if (userName == "q" || password == "q") {
-            exit(1);
+        if (password == "q") {
+            printWelcomeMessage(database);
+            return;
         }
         
         cout << endl;
         if(!database.login(userName, password)){
             cout<<"User with these Credentials was not found, please try again or sign up for a new account"<<endl;
             printWelcomeMessage(database);
+            return;
         }
-    
     }
-    else if (input == "s") {
+    else if (input == "s" || input == "S") {
         do {
             cout << "Sign Up: " << endl << endl;
 
-            cout << "Enter First Name: ";
-            cin >> firstName;
+       
+            firstName = getInput("Enter First Name: ");
 
-            cout << "Enter Last Name: ";
-            cin >> lastName;
+          
+            lastName = getInput("Enter Last Name: ");
 
-            cout << "Enter User Name: ";
-            cin >> userName;
+        
 
-            cout << "Enter Password: ";
-            cin >> password;
+            do{
+                userName = getInput("Enter User Name: ");
+
+                if(database.checkforUser(userName)){
+                    cout<<"username already exists please pick a new one"<<endl;
+                }
+            } while(database.checkforUser(userName));
+
+            do{
             
-            // Need more specific
-            cout << "Confirm Password: ";
-            cin >> confirm;
+                password = getInput("Enter Password: ");
+                
+            
+                password2 = getInput("Enter Password Again: ");
+
+                if(password2 != password){
+                    cout<<"Passwords do not match please re-enter"<<endl;
+                }
+            }while(password2 != password);
             
             cout << "Your Information: " << endl << endl;
             cout << firstName << " | " << lastName << " | " << userName << " | " << password << " | " << endl << endl;
             cout << "Is this correct?" << endl << endl;
-            cout << "(Y (to create account)/ E (to change inputs) / N (to cancel sign up))";
-            cin >> confirm;
-        } while (confirm == "E");
+            // cout << "(Y (to create account)/ C (to change inputs)/ N (to cancel sign up))";
+            // cin >> confirm;
+
+            confirm = getInput("(Y (to create account)/ C (to change inputs)/ N (to cancel sign up)): ");
+        } while (confirm == "C" || confirm == "c");
         
 
-        if (confirm == "Y") {
-            // userDB.signup(firstName, lastName, userName, password);
+        if (confirm == "Y" || confirm == "y") {
+            database.signup(firstName, lastName, userName, password);
+            cout<<"Your acount has been created you now login"<<endl<<endl;
+            printWelcomeMessage(database);
+            return;
         }
 
-        else if (confirm == "N") {
+        else if (confirm == "N"|| confirm == "n") {
             printWelcomeMessage(database);
+            return;
         }
     }
 
@@ -123,3 +146,4 @@ void Display::printWelcomeMessage(UserDatabase &database ) {
     }
 
 }
+

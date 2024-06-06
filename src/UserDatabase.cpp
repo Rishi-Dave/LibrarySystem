@@ -1,7 +1,7 @@
 #include "../include/UserDatabase.h"
-
-UserDatabase::UserDatabase(){
+UserDatabase::UserDatabase(Catalog* catalogPointer){
     usersFileName = "storage/Users.txt";
+    catalog = catalogPointer;
     // readFile();
     loggedIn = false;
     curUser = nullptr;
@@ -68,6 +68,19 @@ bool UserDatabase::login(string userName, string password){
     }
     return false;
 }
+
+bool UserDatabase::checkforUser(string name){
+    for(unsigned i =0; i<userList.size();i++){
+        if(userList.at(i)->getUserName() == name){
+            return true;
+        }
+    }
+    return false;
+}
+
+void UserDatabase::signup(string firstName, string lastName, string userName, string password){
+    User* user1 = new User(firstName,lastName,userName,0,password,catalog);
+    userList.push_back(user1);
 
 User* UserDatabase::getCurUser(){
     return curUser;

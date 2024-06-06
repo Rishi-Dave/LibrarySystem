@@ -9,14 +9,17 @@ class UserDatabase {
         string usersFileName;
         bool loggedIn;
         User *curUser;
+        Catalog* catalog;
     public:
-        UserDatabase();
+        UserDatabase(Catalog* catalogPointer);
         bool login(string userName, string password);
         void signup(string firstName, string lastName, string userName, string password);
         void addUser(User* user);
         void writeFile();
         void readFile(Catalog* catalog);
         bool removeBook(int id);
+        bool checkforUser(string name);
         void printAllInfo();
         User* getCurUser();
 };
+

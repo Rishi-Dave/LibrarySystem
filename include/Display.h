@@ -1,6 +1,7 @@
 #pragma once
 #include "UserDatabase.h"
 #include "../include/ParentDisplay.h"
+#include "../include/Catalog.h"
 
 
 class Display: private ParentDisplay {

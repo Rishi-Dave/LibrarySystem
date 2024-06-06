@@ -124,17 +124,16 @@ void Catalog::sortbyDate() {
 }
 
 
-void Catalog::store(const std::string& filename) {
-  std::ofstream outputFile(filename);
+void Catalog::store() {
+  std::ofstream outputFile("include/Catalog.txt");
 
   if (outputFile.is_open()) {
     for (unsigned i = 0; i < catalog.size(); i++) {
       catalog.at(i).write(outputFile);
     }
     outputFile.close();
-    std::cout << "Catalog information written to file: " << filename << std::endl;
   } else {
-    std::cout << "Error opening file: " << filename << std::endl;
+    std::cout << "Error opening file: " << std::endl;
   }
 }
 

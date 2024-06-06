@@ -1,4 +1,5 @@
 #include "../include/Display.h"
+#include <limits>
 
 void Display::displayAdmin() {
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
@@ -11,6 +12,7 @@ void Display::displayAdmin() {
 
 
 void Display::displayInputPrompt(UserDisplay& userDisplay, UserDatabase& database, CatalogDisplay& catDisplay, Catalog& catalog) {
+    printPageBreak();
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
     cout << "What would you like to do?" << endl << endl;
 
@@ -30,9 +32,11 @@ void Display::displayInputPrompt(UserDisplay& userDisplay, UserDatabase& databas
     }
     if(input == "a" || input == "A"){
         userDisplay.showAll(*database.getCurUser());
+        cout << "Press Enter to continue.";
+        cin.get();
     }
     else if(input == "v" || input == "V"){
-        catDisplay.print(catalog);
+        catDisplay.viewCatalog(&catalog);
     }
     else if(input == "c" || input == "C"){
         userDisplay.checkout(database.getCurUser());
@@ -44,14 +48,16 @@ void Display::displayInputPrompt(UserDisplay& userDisplay, UserDatabase& databas
         database.logout();
     }
     else if(input == "e" || input == "E"){
-        catalog.store("include/Catalog.txt");
+        catalog.store();
         database.writeFile();
         exit(1);
     }
+    
 }
 
 
 void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
+    printPageBreak();
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
     cout << "Please Sign Into Your Account To Begin Checking Out Books!" << endl << endl;
 
@@ -72,6 +78,7 @@ void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
         return;
     }
     else if (input == "l"|| input == "L") {
+        printPageBreak();
         cout << "Log In(q to exit): " << endl << endl;
 
         userName = getInput("Enter User Name: ");
@@ -94,6 +101,7 @@ void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
     }
     else if (input == "s" || input == "S") {
         do {
+            printPageBreak();
             cout << "Sign Up: " << endl << endl;
 
        
@@ -146,7 +154,7 @@ void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
     }
 
     else if (input == "e" || input == "E") {
-        catalog.store("include/Catalog.txt");
+        catalog.store();
         database.writeFile();
         exit(1);
     }

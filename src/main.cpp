@@ -6,7 +6,6 @@
 #include "../include/Display.h"
 
 int main() {
-   
     Catalog catalog;
     UserDatabase database(&catalog);
     UserDisplay userdisplay;

@@ -1,15 +1,15 @@
 #include "../include/Catalog.h"
-
+#include <algorithm>
    //testing only//////   //testing only//////   //testing only//////
     //testing only//////   //testing only//////   //testing only//////
 void Catalog::populatecatalog(){
-    Book book1("The Great Gatsby", "F. Scott Fitzgerald", 9780743273565, "1925", "", "Fiction", "English", "20th Century Literature", false, 1);
-    Book book2("To Kill a Mockingbird", "Harper Lee", 9780061120084, "1960", "", "Fiction", "English", "Civil Rights", false, 2);
-    Book book3("1984", "George Orwell", 9780451524935, "1949", "", "Dystopian", "English", "Political Fiction", false, 3);
-    Book book4("Pride and Prejudice", "Jane Austen", 9781503290563, "1813", "", "Romance", "English", "19th Century Literature", false, 4);
-    Book book5("Moby-Dick", "Herman Melville", 9781503280786, "1851", "", "Adventure", "English", "Maritime Fiction", false, 5);
-    Book book6("War and Peace", "Leo Tolstoy", 9781853260629, "1869", "", "Historical Fiction", "Russian", "Napoleonic Wars", false, 6);
-    Book book7("The Catcher in the Rye", "J.D. Salinger", 9780316769488, "1951", "", "Fiction", "English", "Coming-of-Age", false, 7);
+    Book book1("The Great Gatsby", "F. Scott Fitzgerald", 9780743273565, "1925", "Fiction", "English", "20th Century Literature", false, 1);
+    Book book2("To Kill a Mockingbird", "Harper Lee", 9780061120084, "1960", "Fiction", "English", "Civil Rights", false, 2);
+    Book book3("1984", "George Orwell", 9780451524935, "1949", "Dystopian", "English", "Political Fiction", false, 3);
+    Book book4("Pride and Prejudice", "Jane Austen", 9781503290563, "1813", "Romance", "English", "19th Century Literature", false, 4);
+    Book book5("Moby-Dick", "Herman Melville", 9781503280786, "1851", "Adventure", "English", "Maritime Fiction", false, 5);
+    Book book6("War and Peace", "Leo Tolstoy", 9781853260629, "1869", "Historical Fiction", "Russian", "Napoleonic Wars", false, 6);
+    Book book7("The Catcher in the Rye", "J.D. Salinger", 9780316769488, "1951", "Fiction", "English", "Coming-of-Age", false, 7);
     catalog.push_back(book1);
     catalog.push_back(book2);
     catalog.push_back(book3);
@@ -21,7 +21,8 @@ void Catalog::populatecatalog(){
 
 
 Catalog::Catalog(){
-    populatecatalog();
+    readBooksFromFile("storage/Catalog.txt");
+    //populatecatalog();
 };
 
 void Catalog::sortbyAuthor() {
@@ -139,7 +140,7 @@ void Catalog::store(const std::string& filename) {
 
 
 void Catalog::addBook(string Title, string author, int isbn, string dataPublished, string genre, string language, string subject, int id){
-    Book newBook(Title, author, isbn, dataPublished, "", genre, language, subject, false, id);
+    Book newBook(Title, author, isbn, dataPublished, genre, language, subject, false, id);
     catalog.push_back(newBook);
 }
 
@@ -169,7 +170,7 @@ Book* Catalog::findBook(string title){
     }
     return nullptr;
 }
-/*
+
 void Catalog::readBooksFromFile(const string& filename) {
     ifstream file(filename);
     if (!file) {
@@ -181,21 +182,29 @@ void Catalog::readBooksFromFile(const string& filename) {
 
     while (getline(file, line)) {
 
-        istringstream INFS(line);
-        string title, author, genre, language, subject;
-        int year, isbn, id;
+        istringstream ss(line);
+        string title, author, genre, language, subject, year, isbn, id;
         
-        INFS >> quoted(title) >> quoted(author) >> quoted(genre) >> quoted(language) 
-            >> quoted(subject) >> year >> isbn >> id;
-        
-        Book book(title, author, genre, language, subject, year, isbn, id);
-
-        addBook(book);
+        getline(ss, title, '|');
+        getline(ss, author, '|');
+        getline(ss, genre, '|');
+        getline(ss, language, '|');
+        getline(ss, subject, '|');
+        getline(ss, year, '|');
+        getline(ss, isbn, '|');
+        if (isbn.empty() || !all_of(isbn.begin(), isbn.end(), ::isdigit)) {
+            continue;
+        }
+        //int intIsbn = std::stoi(isbn);
+        getline(ss, id, '|');
+        int intId = std::stoi(id);
+        int intIsbn = std::stoi(isbn);
+        addBook(title, author, intIsbn, year, genre, language, subject, intId);
     }
 
     file.close();
 }
-*/
+
 void Catalog::testPrint(){
     for(unsigned i = 0; i < catalog.size(); i++){
         cout << catalog.at(i).getTitle() << endl;

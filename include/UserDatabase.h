@@ -19,5 +19,7 @@ class UserDatabase {
         void readFile(Catalog* catalog);
         bool removeBook(int id);
         bool checkforUser(string name);
+        void printAllInfo();
+        User* getCurUser();
 };
 

@@ -2,25 +2,6 @@
 #include "../include/BookDisplay.h"
 #include <algorithm>
 
-// string UserDisplay::trim(const string& str) {
-//     size_t first = str.find_first_not_of(' ');
-//     if (first == string::npos) return "";
-//     size_t last = str.find_last_not_of(' ');
-//     return str.substr(first, last - first + 1);
-// }
-// string UserDisplay::getInput(const string& prompt) {
-//     string input;
-//     while (true) {
-//         std::cout << prompt;
-//         getline(cin, input);
-//         input = trim(input);
-//         if (!input.empty()) {
-//             return input;
-//         }
-//         std::cout << "Input cannot be empty. Please enter a valid value." << endl;
-//     }
-// }
-
 void UserDisplay::showAll(User user){
     std::cout<<"Username: "<< user.getUserName()<<std::endl;
     std::cout<<"Name: "<< user.getFirstName()<<" "<<user.getLastName()<<std::endl;

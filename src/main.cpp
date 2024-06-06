@@ -10,13 +10,19 @@ int main() {
     UserDisplay display;
     CatalogDisplay catDisplay;
     AdminDisplay adminDisplay;
-    User user1("Atharva", "Nevasekar", "aneva", 123, "password", &catalog);
+    UserDisplay userDisplay;
     AdminUser him("Rishi", "Dave", "rdave", 1234, "password", &catalog);
-    database.addUser(&user1);
+    catDisplay.print(catalog);
+    database.readFile(&catalog);
+    /*
+    
     database.writeFile();
     display.checkout(&user1);
     database.writeFile();
     display.returnBook(&user1);
     database.writeFile();
-
+    */    
+   database.printAllInfo();
+   database.login("aneva", "password");
+   userDisplay.showAll(*database.getCurUser());
 }

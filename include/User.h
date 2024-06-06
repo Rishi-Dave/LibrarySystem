@@ -29,6 +29,7 @@ class User{
         void checkoutBook(Book book); 
         void returnBook (string title);
         Book* findBook(string title);
+        Book* findBook(int id);
         Book* findMyBook(string title);
         //testing purposes
         void populatebooks();

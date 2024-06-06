@@ -2,7 +2,6 @@
 
 #include "Book.h"
 
-
 class Catalog {
     private:
         vector<Book> catalog;

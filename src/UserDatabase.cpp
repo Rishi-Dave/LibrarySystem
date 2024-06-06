@@ -21,6 +21,7 @@ void UserDatabase::writeFile() {
 }
 
 void UserDatabase::readFile(Catalog* catalog) {
+    cout << "starts" << endl;
     ifstream read;
     read.open(usersFileName);
     string firstName;
@@ -29,10 +30,12 @@ void UserDatabase::readFile(Catalog* catalog) {
     string password;
     string booksYesNo;
     while(read >> firstName){
+        cout << "loop runs, " << firstName << endl;
         read >> lastName;
         read >> userName;
         read >> password;
-        User newUser = User(firstName, lastName, userName, 0, password, catalog);
+        User* newUser = new User(firstName, lastName, userName, 0, password, catalog);
+        cout << "user created" << endl;
         read >> booksYesNo;
         if(booksYesNo == "Y"){
             string bookID;
@@ -41,11 +44,13 @@ void UserDatabase::readFile(Catalog* catalog) {
                     break;
                 }
                 int ID = stoi(bookID);
-                Book* myBook = newUser.findBook(bookID);
-                newUser.checkoutBook(*myBook);
+                cout << ID << endl;
+                Book* myBook = newUser->findBook(ID);
+                newUser->checkoutBook(*myBook);
             }
         }
-        addUser(&newUser);
+        cout << "books added" << endl;
+        addUser(newUser);
     }
     read.close();
 }
@@ -54,7 +59,6 @@ bool UserDatabase::login(string userName, string password){
     for(unsigned i =0; i<userList.size();i++){
         if(userList.at(i)->getUserName() == userName){
             if(userList.at(i)->getPassword() == password){
-                return true;
                 curUser = userList.at(i);
             }
             else{
@@ -63,4 +67,15 @@ bool UserDatabase::login(string userName, string password){
         }
     }
     return false;
+}
+
+User* UserDatabase::getCurUser(){
+    return curUser;
+}
+
+//testing
+void UserDatabase::printAllInfo(){
+    for(unsigned i = 0; i < userList.size(); i++){
+        cout << userList.at(i)->getUserInfo() << endl;
+    }
 }

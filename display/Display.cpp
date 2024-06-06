@@ -1,13 +1,42 @@
 #include "../include/Display.h"
 #include <limits>
 
-void Display::displayAdmin() {
+void Display::displayAdmin(AdminDisplay& adminDisplay, UserDatabase& database, CatalogDisplay& catDisplay, Catalog& catalog) {
+    printPageBreak();
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
     cout << "What would you like to do?" << endl << endl;
 
-    cout << "> Add Book(a)" << endl;
-    cout << "> Remove Book(r)" << endl;
-    cout << "> Edit Book(e)" << endl;
+    cout << "> Add Book (a)" << endl;
+    cout << "> Remove Book (r)" << endl;
+    //cout << "> Edit Book(c)" << endl;
+    cout << "> View Book Catalog (v)" << endl;
+    cout << "> Logout(l)" << endl;
+    cout << "> exit(e)" << endl;
+
+    string input = getInput("");
+    while (input != "a" && input != "A" && input != "v" && input != "V" && input != "l" && input != "L" && input != "c" 
+    && input != "C" && input != "r" && input != "R"&& input != "e" && input != "E") {
+        input = getInput("");
+        cout << "Please enter a correct input" << endl;
+    }
+    if(input == "a" || input == "A"){
+        adminDisplay.addBook(database.getAdminUser());
+    }
+    else if(input == "r" || input == "R"){
+        adminDisplay.removeBook(database.getAdminUser());
+    }
+    else if(input == "v" || input == "v"){
+        catDisplay.viewCatalog(&catalog);
+    }
+    else if(input == "l" || input == "L"){
+        database.logout();
+    }
+    else if(input == "e" || input == "E"){
+        catalog.store();
+        database.writeFile();
+        exit(1);
+    }
+
 }
 
 
@@ -16,7 +45,6 @@ void Display::displayInputPrompt(UserDisplay& userDisplay, UserDatabase& databas
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
     cout << "What would you like to do?" << endl << endl;
 
-    // 2 C?
     cout << "> View Account Info and Checked Books(a)" << endl;
     cout << "> View Book Catalog(v)" << endl;
     cout << "> Checkout A Book(c)" << endl;
@@ -62,6 +90,7 @@ void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
     cout << "Please Sign Into Your Account To Begin Checking Out Books!" << endl << endl;
 
     cout << "> Login(l)" << endl;
+    cout << "> Admin Login(a)" << endl;
     cout << "> Sign up(s)" << endl;
     cout << "> exit(e)" << endl;
 
@@ -74,7 +103,7 @@ void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
     string password;
     string password2;
 
-    if(input != "l" && input != "s" && input != "e" && input != "L" && input != "S" && input != "E"){
+    if(input != "l" && input != "s" && input != "e"&& input != "a"  && input != "L" && input != "S" && input != "E" && input != "A"){
         return;
     }
     else if (input == "l"|| input == "L") {
@@ -95,6 +124,28 @@ void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
         
         cout << endl;
         if(!database.login(userName, password)){
+            cout<<"User with these Credentials was not found, please try again or sign up for a new account"<<endl;
+            return;
+        }
+    }
+    else if (input == "a"|| input == "A") {
+        printPageBreak();
+        cout << "Log In(q to exit): " << endl << endl;
+
+        userName = getInput("Enter User Name: ");
+        
+         if (userName == "q") {
+            return;
+        }
+
+        password = getInput("Enter Password: ");
+
+        if (password == "q") {
+            return;
+        }
+        
+        cout << endl;
+        if(!database.adminLogin(userName, password)){
             cout<<"User with these Credentials was not found, please try again or sign up for a new account"<<endl;
             return;
         }

@@ -1,6 +1,6 @@
 #pragma once
 
-#include "UserDatabase.h"
+#include "User.h"
 #include "Catalog.h"
 
 class AdminUser : public User{
@@ -10,5 +10,6 @@ class AdminUser : public User{
         void removeBook(int id);
         void editBook(int isbn);
         Book* findBook(int id);
+        Book* findBook(string title);
 };
 

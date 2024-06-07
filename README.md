@@ -54,14 +54,14 @@ Clone this repository to download the files required the program
  ```
 git clone https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018.git
 ```
-Make sure you have **Cmake installed** to run the program and type the following commands to run the program
+Make sure you have **Cmake installed** to run the program and type the following commands to run the program, Make sure ```Catalog.txt``` and ```Users.txt``` are empty when you run the program for the first time to ensure that any invalid previous data does not mess up your experience.
 ```
 cmake .
 ```
 ```
 make
 ```
-These command should generate a executable ``` ./runMain``` and now whenever you want to acess the programm simply open the folder where the repo is cloned and run
+These command should generate a executable ``` ./bin/runMain``` and now whenever you want to acess the programm simply open the folder where the repo is cloned and run
 ```
 ./runMain
 ```

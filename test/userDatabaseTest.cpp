@@ -103,8 +103,8 @@ TEST(userDatabaseTest, StoreTest) {
     UserDatabase database(&catalog);
     User* user1 = new User("Lebron","James","theKing","password", &catalog);
     database.addUser(user1);
-    database.writeFile("test/testStorage/testStorage/Users.txt");
-    ifstream file("test/testStorage/testStorage/Users.txt");
+    database.writeFile("testUsers.txt");
+    ifstream file("testUsers.txt");
     ASSERT_TRUE(file.is_open());
     string line;
     getline(file, line);
@@ -117,8 +117,8 @@ TEST(userDatabaseTest, ReadUsersFromFileTest) {
     UserDatabase database(&catalog);
     User* user1 = new User("Lebron","James","theKing","password", &catalog);
     database.addUser(user1);
-    database.writeFile("test/testStorage/testStorage/Users.txt");
-    database.readFile(&catalog, "test/testStorage/testStorage/Users.txt");
+    database.writeFile("testUsers.txt");
+    database.readFile(&catalog, "testUsers.txt");
     bool userExists = database.checkforUser("theKing");
     EXPECT_TRUE(userExists);
 }

@@ -14,16 +14,25 @@ int main() {
     UserDisplay userDisplay;
     Display display;
     AdminUser admin("Admin", "User", "admin", "complexpassword", &catalog);
+    
     database.addAdmin(&admin);
+    
     while(true){
         if(database.getAdminUser()){
             display.displayAdmin(adminDisplay, database, catDisplay, catalog);
         }
         else if(!database.getCurUser()){
-            display.printWelcomeMessage(database, catalog);
+            bool stop = display.printWelcomeMessage(database, catalog);
+            if(stop){
+                break;
+            }
         }
         else{
-            display.displayInputPrompt(userDisplay, database, catDisplay, catalog);
+            bool stop = display.displayInputPrompt(userDisplay, database, catDisplay, catalog);
+            cout << stop << endl;
+            if(stop){
+                break;
+            }
         }
     }
     

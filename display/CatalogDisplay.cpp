@@ -4,7 +4,7 @@
 void CatalogDisplay::print(Catalog cat){
     BookDisplay printer;
     vector<Book> books = *(cat.vectorPointer());
-    for(unsigned i; i<books.size();i++){
+    for(unsigned i = 0; i<books.size();i++){
         printer.printBook(books.at(i));
     }
 }

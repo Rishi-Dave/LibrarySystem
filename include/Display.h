@@ -6,11 +6,11 @@
 #include "CatalogDisplay.h"
 #include "AdminDisplay.h"
 
-class Display: private ParentDisplay {
+class Display: public ParentDisplay {
     public:
-        void displayAdmin(AdminDisplay& adminDisplay, UserDatabase& database, CatalogDisplay& catDisplay, Catalog& catalog);     
+        bool displayAdmin(AdminDisplay& adminDisplay, UserDatabase& database, CatalogDisplay& catDisplay, Catalog& catalog);     
         void displayWelcome(string pageName);
-        void displayInputPrompt(UserDisplay& userDisplay, UserDatabase& database, CatalogDisplay& catDisplay, Catalog& catalog);
-        void printWelcomeMessage(UserDatabase &database, Catalog& catalog);
+        bool displayInputPrompt(UserDisplay& userDisplay, UserDatabase& database, CatalogDisplay& catDisplay, Catalog& catalog);
+        bool printWelcomeMessage(UserDatabase &database, Catalog& catalog);
 };
 

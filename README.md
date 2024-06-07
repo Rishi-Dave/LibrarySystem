@@ -49,7 +49,8 @@
  > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
  
  ## Screenshots
- > Screenshots of the input/output after running your application
+ > Screenshots of the input/output after running the application
+> https://docs.google.com/document/d/1Lh5RrSasQVPTc1BOX3DUwyQmSp4ii3IoF_g9YN-R-nU/edit?usp=sharing
  ## Installation/Usage
  > Instructions on installing and running your application
  ## Testing

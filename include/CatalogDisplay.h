@@ -6,7 +6,6 @@
 class CatalogDisplay : private ParentDisplay{
     public:
         void printbyAuthor(Catalog cat);
-
         void printbyISBN(Catalog cat);
         void printbyTitle(Catalog cat);
         void printbyLang(Catalog cat);

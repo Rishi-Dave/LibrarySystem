@@ -7,7 +7,6 @@ class User{
         std::string firstName;
         std::string lastName;
         std::string userName;
-        double fees;
         std::string password;
         std::vector<Book> checkedBooks;
         Catalog* catalog;
@@ -26,17 +25,10 @@ class User{
         void setFirstName(std::string newName){ firstName = newName;}
         void setLastName(std::string newName){ lastName = newName;}
         //functions
-        void payFees(double payment);
         void checkoutBook(Book book); 
         void returnBook (string title);
         Book* findBook(string title);
         Book* findBook(int id);
         Book* findMyBook(string title);
-        //testing purposes
-        void populatebooks();
         std::string getUserInfo();
-        
-
-
-
 };

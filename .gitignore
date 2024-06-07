@@ -11,11 +11,11 @@ Makefile
 bin
 lib
 
-googletest-download
-googletest-build
-googletest-src
 
 cmake_install.cmake
 CMakeCache.txt
+googletest-download
+googletest-build
+googletest-src
 
 *.a

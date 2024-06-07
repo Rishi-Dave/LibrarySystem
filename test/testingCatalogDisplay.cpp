@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+#include "googletest/googletest/include/gtest/gtest.h"
 #include <sstream>
 #include "../include/CatalogDisplay.h"
 #include "../include/Catalog.h"

@@ -19,7 +19,10 @@ int main() {
     
     while(true){
         if(database.getAdminUser()){
-            display.displayAdmin(adminDisplay, database, catDisplay, catalog);
+            bool stop = display.displayAdmin(adminDisplay, database, catDisplay, catalog);
+            if(stop){
+                break;
+            }
         }
         else if(!database.getCurUser()){
             bool stop = display.printWelcomeMessage(database, catalog);
@@ -29,7 +32,6 @@ int main() {
         }
         else{
             bool stop = display.displayInputPrompt(userDisplay, database, catDisplay, catalog);
-            cout << stop << endl;
             if(stop){
                 break;
             }

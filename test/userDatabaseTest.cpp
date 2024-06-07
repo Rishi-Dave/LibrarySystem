@@ -13,6 +13,30 @@ TEST(userDatabaseTest,constructor){
     EXPECT_FALSE(database.getLogStatus());
 }
 
+
+TEST(userDatabaseTest,getCurUser){
+    Catalog catalog;
+    UserDatabase database(&catalog);
+    User* user1 = new User("Lebron","James","theKing","password", &catalog);
+
+    database.addUser(user1);
+    database.login("theKing", "password");
+
+    EXPECT_EQ(database.getCurUser(), user1);
+}
+
+TEST(userDatabaseTest,getAdminUser){
+    Catalog catalog;
+    UserDatabase database(&catalog);
+    AdminUser* admin = new AdminUser("Lebron","James","theKing","password", &catalog);
+
+    database.addAdmin(admin);
+    database.adminLogin("theKing", "password");
+
+    EXPECT_EQ(database.getAdminUser(), admin);
+    delete admin;
+}
+
 TEST(userDatabaseTest,addUser){
     Catalog catalog;
     UserDatabase database(&catalog);
@@ -74,3 +98,27 @@ TEST(userDatabaseTest,logOut){
     EXPECT_FALSE(database.getLogStatus());
 }
 
+TEST(userDatabaseTest, StoreTest) {
+    Catalog catalog;
+    UserDatabase database(&catalog);
+    User* user1 = new User("Lebron","James","theKing","password", &catalog);
+    database.addUser(user1);
+    database.writeFile("test/testStorage/testStorage/Users.txt");
+    ifstream file("test/testStorage/testStorage/Users.txt");
+    ASSERT_TRUE(file.is_open());
+    string line;
+    getline(file, line);
+    EXPECT_EQ(line, "Lebron James theKing password N ");
+    file.close();
+}
+
+TEST(userDatabaseTest, ReadUsersFromFileTest) {
+    Catalog catalog;
+    UserDatabase database(&catalog);
+    User* user1 = new User("Lebron","James","theKing","password", &catalog);
+    database.addUser(user1);
+    database.writeFile("test/testStorage/testStorage/Users.txt");
+    database.readFile(&catalog, "test/testStorage/testStorage/Users.txt");
+    bool userExists = database.checkforUser("theKing");
+    EXPECT_TRUE(userExists);
+}

@@ -104,8 +104,8 @@ void Catalog::sortbyDate() {
 }
 
 
-void Catalog::store() {
-  std::ofstream outputFile("storage/Catalog.txt");
+void Catalog::store(string filename) {
+  std::ofstream outputFile(filename);
 
   if (outputFile.is_open()) {
     for (unsigned i = 0; i < catalog.size(); i++) {

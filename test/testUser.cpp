@@ -28,12 +28,13 @@ protected:
     Book* book2;
 };
 
-TEST_F(UserTest, TestConstruction) {
+TEST_F(UserTest, TestConstructionAndGetters) {
     EXPECT_EQ(user->getFirstName(), "First");
     EXPECT_EQ(user->getLastName(), "Last");
     EXPECT_EQ(user->getUserName(), "username");
     EXPECT_EQ(user->getPassword(), "password");
 }
+
 
 TEST_F(UserTest, SetFirstName) {
     user->setFirstName("Fat");

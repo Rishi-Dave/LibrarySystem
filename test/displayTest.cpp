@@ -70,11 +70,7 @@ TEST_F(DisplayTest, TestDisplayAdminLogout) {
 
 TEST_F(DisplayTest, TestDisplayAdminExit) {
     setInput("e\n");
-    AdminUser* admin = new AdminUser("Admin", "User", "admin", "complexpassword", &catalog);
-    database.addAdmin(admin);
-    database.adminLogin("admin", "complexpassword");
     EXPECT_TRUE(display.displayAdmin(adminDisplay, database, catalogDisplay, catalog));
-    delete admin;
 }
 
 TEST_F(DisplayTest, TestDisplayInputPromptViewAccountInfo) {
@@ -121,9 +117,7 @@ TEST_F(DisplayTest, TestDisplayInputPromptLogout) {
 
 TEST_F(DisplayTest, TestDisplayInputPromptExit) {
     setInput("e\n");
-    User* user = new User("User", "Test", "user", "password", &catalog);
-    database.addUser(user);
-    database.login("user", "password");
+
     EXPECT_TRUE(display.displayInputPrompt(userDisplay, database, catalogDisplay, catalog));
 }
 

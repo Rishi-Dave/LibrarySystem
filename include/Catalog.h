@@ -22,7 +22,7 @@ class Catalog {
         void sortbyDate();
         vector<Book>* vectorPointer(){return &catalog;};
 
-        void store();
+        void store(string filename);
         //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////
         //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////
         //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////   //testing only//////

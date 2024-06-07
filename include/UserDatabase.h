@@ -21,8 +21,8 @@ class UserDatabase {
         void signup(string firstName, string lastName, string userName, string password);
         void addUser(User* user);
         void addAdmin(AdminUser* admin);
-        void writeFile();
-        void readFile(Catalog* catalog);
+        void writeFile(string usersFile);
+        void readFile(Catalog* catalog, string filename);
         bool checkforUser(string name);
         void logout();
         User* getCurUser();

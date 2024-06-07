@@ -21,4 +21,5 @@ googletest-build/
 googletest-src/
 
 # Ignore the storage directory
-storage/
+storage
+testStorage

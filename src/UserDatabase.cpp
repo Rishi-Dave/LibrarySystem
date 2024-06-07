@@ -4,7 +4,7 @@
 UserDatabase::UserDatabase(Catalog* catalogPointer){
     usersFileName = "storage/Users.txt";
     catalog = catalogPointer;
-    readFile(catalog);
+    readFile(catalog, usersFileName);
     loggedIn = false;
     curUser = nullptr;
     adminUser = nullptr;
@@ -24,18 +24,18 @@ void UserDatabase::addAdmin(AdminUser* admin){
     adminList.push_back(admin);
 }
 
-void UserDatabase::writeFile() {
+void UserDatabase::writeFile(string usersFile) {
     ofstream write;
-    write.open(usersFileName);
+    write.open(usersFile);
     for(unsigned i = 0; i < userList.size(); i++){
         write << userList.at(i)->getUserInfo() << endl;
     }
     write.close();
 }
 
-void UserDatabase::readFile(Catalog* catalog) {
+void UserDatabase::readFile(Catalog* catalog, string filename) {
     ifstream read;
-    read.open(usersFileName);
+    read.open(filename);
     string firstName;
     string lastName;
     string userName;

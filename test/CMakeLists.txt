@@ -14,6 +14,7 @@ add_executable(runAllTests
   testUser.cpp
   testBookDisplay.cpp
   parentDisplayTest.cpp
+  testingCatalogDisplay.cpp
 )
 
 target_link_libraries(runAllTests gmock gtest gtest_main)

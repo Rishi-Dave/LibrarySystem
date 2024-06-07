@@ -31,14 +31,14 @@ TEST(AdminUserTest, AddBook) {
 
 TEST(AdminUserTest, RemoveBook) {
     // Arrange
-    std::string title = "1984";
+    std::string title = "1999";
     std::string author = "George Orwell";
     int isbn = 1234567890;
     std::string datePublished = "1949";
     std::string genre = "Dystopian";
     std::string language = "English";
     std::string subject = "Political Fiction";
-    int id = 1;
+    int id = 807;
     Catalog testCatalog;
     AdminUser adminUser("John", "Doe", "johndoe", "password", &testCatalog);
 
@@ -54,14 +54,14 @@ TEST(AdminUserTest, RemoveBook) {
 
 TEST(AdminUserTest, FindBookById) {
     // Arrange
-    std::string title = "1984";
+    std::string title = "1999";
     std::string author = "George Orwell";
     int isbn = 1234567890;
     std::string datePublished = "1949";
     std::string genre = "Dystopian";
     std::string language = "English";
     std::string subject = "Political Fiction";
-    int id = 1;
+    int id = 807;
     Catalog testCatalog;
     AdminUser adminUser("John", "Doe", "johndoe", "password", &testCatalog);
     adminUser.addBook(title, author, isbn, datePublished, genre, language, subject, id);

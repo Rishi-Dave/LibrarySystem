@@ -1,2 +1,0 @@
-/usr/bin/ar qc libsimpleLibrary.a CMakeFiles/simpleLibrary.dir/Book.cpp.o CMakeFiles/simpleLibrary.dir/Catalog.cpp.o
-/usr/bin/ranlib libsimpleLibrary.a

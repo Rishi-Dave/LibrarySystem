@@ -8,6 +8,8 @@ add_executable(runAllTests
   TestBook.cpp 
   booktest.cpp
   catalogtest.cpp
+  testAdmin.cpp
+  testUser.cpp
 )
 
 target_link_libraries(runAllTests gmock gtest gtest_main)

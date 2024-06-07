@@ -26,7 +26,8 @@
 > 
 ### Navigation Diagram
 > The Diagram belows shows the how a user would expect to move from page in the program with the starting point being the login page.
-> ![Navigation Diagram Library Management](https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/eb57d41b-30d5-48ac-8609-a91e235b5c7c)
+> ![Navigation Diagram Library Management]<img width="952" alt="image" src="https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/cfd2bcaa-fe04-422a-8932-d6e3a1cae915">
+
 
 
 ### Screen Layouts

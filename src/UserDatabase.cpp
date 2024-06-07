@@ -114,9 +114,3 @@ AdminUser* UserDatabase::getAdminUser(){
 }
 
 
-//testing
-void UserDatabase::printAllInfo(){
-    for(unsigned i = 0; i < userList.size(); i++){
-        cout << userList.at(i)->getUserInfo() << endl;
-    }
-}

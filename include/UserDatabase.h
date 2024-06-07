@@ -22,12 +22,16 @@ class UserDatabase {
         void addAdmin(AdminUser* admin);
         void writeFile();
         void readFile(Catalog* catalog);
-        bool removeBook(int id);
         bool checkforUser(string name);
-        void printAllInfo();
         void logout();
         User* getCurUser();
         AdminUser* getAdminUser();
         bool adminLogin(string userName, string password);
+        bool getLogStatus(){return loggedIn;};
+        std::vector<User*>* vectorPointer(){return &userList;};
+        std::vector<AdminUser*>* adminvectorPointer(){return &adminList;};
+
+
+
 };
 

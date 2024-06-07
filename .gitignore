@@ -6,3 +6,6 @@ CMakeCache.txt
 runMain
 build
 Makefile
+bin
+lib
+*.a

@@ -17,9 +17,9 @@ TEST(userDatabaseTest,constructor){
 TEST(userDatabaseTest,addUser){
     Catalog catalog;
     UserDatabase database(&catalog);
-    User user1("Lebron","James","theKing","password", &catalog);
+    User* user1 = new User("Lebron","James","theKing","password", &catalog);
 
-    database.addUser(&user1);
+    database.addUser(user1);
 
     EXPECT_TRUE(database.checkforUser("theKing"));
 }
@@ -40,9 +40,9 @@ TEST(userDatabaseTest,addadmin){
 TEST(userDatabaseTest,checkforUser){
     Catalog catalog;
     UserDatabase database(&catalog);
-    User user1("Lebron","James","theKing","password", &catalog);
+    User* user1 = new User("Lebron","James","theKing","password", &catalog);
 
-    database.addUser(&user1);
+    database.addUser(user1);
 
     EXPECT_TRUE(database.checkforUser("theKing"));
 }
@@ -50,8 +50,8 @@ TEST(userDatabaseTest,checkforUser){
 TEST(userDatabaseTest,login){
     Catalog catalog;
     UserDatabase database(&catalog);
-    User user1("Lebron","James","theKing","password", &catalog);
-    database.addUser(&user1);
+    User* user1 = new User("Lebron","James","theKing","password", &catalog);
+    database.addUser(user1);
     
 
     EXPECT_TRUE(database.login("theKing","password"));

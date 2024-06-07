@@ -1,7 +1,7 @@
 #pragma once
 #include <string>
 #include <iostream>
-#include <fstream> // Include header for file operations
+#include <fstream> 
 #include <vector>
 #include <sstream>
 using namespace std;
@@ -12,7 +12,6 @@ private:
     string Author;
     int ISBN;
     string DatePublished;
-    string DueDate;
     string Genre;
     string Language;
     string Subject;

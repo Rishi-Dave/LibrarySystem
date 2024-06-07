@@ -3,7 +3,6 @@
 #include "../include/User.h"
 #include "../include/Book.h"
 #include "../include/Catalog.h"
-#include <gtest/gtest.h>
 
 
 TEST(userDatabaseTest,constructor){

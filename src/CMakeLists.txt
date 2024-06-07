@@ -3,7 +3,7 @@ add_library(simpleLibrary
   Catalog.cpp
   User.cpp
   AdminUser.cpp
-  Catalog.cpp
+  UserDatabase.cpp
 )
 
 find_library(M_LIB m)

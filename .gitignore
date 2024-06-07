@@ -1,9 +1,9 @@
 # Ignore Visual Studio Code configuration files
-*.vscode
+.vscode
 
 # Ignore build artifacts and caches
 a.out
-CMakeFiles/
+CMakeFiles
 cmake_install.cmake
 CMakeCache.txt
 build/
@@ -20,4 +20,5 @@ googletest-download/
 googletest-build/
 googletest-src/
 
-# Add any other general files or directories to be ignored
+# Ignore the storage directory
+storage/

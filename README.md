@@ -52,7 +52,21 @@
  > Screenshots of the input/output after running the application
 > https://docs.google.com/document/d/1Lh5RrSasQVPTc1BOX3DUwyQmSp4ii3IoF_g9YN-R-nU/edit?usp=sharing
  ## Installation/Usage
- > Instructions on installing and running your application
+Clone this repository to download the files required the program
+ ```
+git clone https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018.git
+```
+Make sure you have **Cmake installed** to run the program and type the following commands to run the program
+```
+cmake .
+```
+```
+make
+```
+These command should generate a executable ``` ./runMain``` and now whenever you want to acess the programm simply open the folder where the repo is cloned and run
+```
+./runMain
+```
  ## Testing
- > How was your project tested/validated? If you used CI, you should have a "build passing" badge in this README.
+ > The Project was validated using the google test suite and using a series of Unit Tests for each file to make sure they have proper behavior, accept input and output properly.
  

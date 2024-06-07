@@ -40,26 +40,7 @@
 <img width="1063" alt="image" src="https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/5db599db-6a2a-4bce-b129-95f4fc4b495a">
 
  > ## Phase III
- > You will need to schedule a check-in for the second scrum meeting with the same reader you had your first scrum meeting with (using Calendly). Your entire team must be present. This meeting will occur on week 8 during lab time.
- 
- > BEFORE the meeting you should do the following:
- > * Update your class diagram from Phase II to include any feedback you received from your TA/grader.
- > * Considering the SOLID design principles, reflect back on your class diagram and think about how you can use the SOLID principles to improve your design. You should then update the README.md file by adding the following:
- >   * A new class diagram incorporating your changes after considering the SOLID principles.
- >   * For each update in your class diagram, you must explain in 3-4 sentences:
- >     * What SOLID principle(s) did you apply?
- >     * How did you apply it? i.e. describe the change.
- >     * How did this change help you write better code?
- > * Perform a new sprint plan like you did in Phase II.
- > * You should also make sure that your README file (and Project board) are up-to-date reflecting the current status of your project and the most recent class diagram. Previous versions of the README file should still be visible through your commit history.
- 
-> During the meeting with your reader you will discuss: 
- > * How effective your last sprint was (each member should talk about what they did)
- > * Any tasks that did not get completed last sprint, and how you took them into consideration for this sprint
- > * Any bugs you've identified and created issues for during the sprint. Do you plan on fixing them in the next sprint or are they lower priority?
- > * What tasks you are planning for this next sprint.
-
- 
+ > One of the first changes we made to apply to Solid Principals was to add separate Display classes for each class inorder to follow the Single Responsibility Principle. This Change allowed us to write better code since it became easier to edit the display versus the actual functionality of the program. It allowed for much easier and faster development. Additionally, we follow the open and closed principle since the code base is all open to expansion and creating new functions, but it is closed off from modification. We also follow the interface segregation principle with the book display class. The book display class is the only display class that doesn't take in input variables and the whole point of the Display Parent class is to help with input functionality. If the book display inherited from this class it would be a violation of the Interface segregation principle since those functions are useless for the class; thus, the book display class doesn't inherit like all the other display classes. It helped create better code since the bookDisplay class isn't needless inheriting functions and helps the code run faster.
  > ## Final deliverable
  > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
  > Before the demo, you should do the following:

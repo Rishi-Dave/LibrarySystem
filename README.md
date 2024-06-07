@@ -56,7 +56,7 @@ make
 ```
 These command should generate a executable ``` ./bin/runMain``` and now whenever you want to acess the programm simply open the folder where the repo is cloned and run
 ```
-./runMain
+./bin/runMain
 ```
  ## Testing
 > * How we test:

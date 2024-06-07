@@ -39,10 +39,10 @@
 <img width="1063" alt="image" src="https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018/assets/147217989/5db599db-6a2a-4bce-b129-95f4fc4b495a">
 
  > One of the first changes we made to apply to Solid Principals was to add separate Display classes for each class inorder to follow the Single Responsibility Principle. This Change allowed us to write better code since it became easier to edit the display versus the actual functionality of the program. It allowed for much easier and faster development. Additionally, we follow the open and closed principle since the code base is all open to expansion and creating new functions, but it is closed off from modification. We also follow the interface segregation principle with the book display class. The book display class is the only display class that doesn't take in input variables and the whole point of the Display Parent class is to help with input functionality. If the book display inherited from this class it would be a violation of the Interface segregation principle since those functions are useless for the class; thus, the book display class doesn't inherit like all the other display classes. It helped create better code since the bookDisplay class isn't needless inheriting functions and helps the code run faster.
- > ## Final deliverable
+ ## Final deliverable
 
  
- ## Screenshots
+ >## Screenshots
  > Screenshots of the input/output after running the application
 > https://docs.google.com/document/d/1Lh5RrSasQVPTc1BOX3DUwyQmSp4ii3IoF_g9YN-R-nU/edit?usp=sharing
  ## Installation/Usage
@@ -50,7 +50,7 @@ Clone this repository to download the files required the program
  ```
 git clone https://github.com/cs100/final-project-rdave009-xlai015-hliu246-aneva018.git
 ```
-Make sure you have **Cmake installed** to run the program and type the following commands to run the program, Make sure ```Catalog.txt``` and ```Users.txt``` are empty when you run the program for the first time to ensure that any invalid previous data does not mess up your experience.
+Make sure you have **Cmake installed** to run the program and type the following commands to run the program, Make sure ```storage/Catalog.txt``` and ```storage/Users.txt``` are empty/do not exists when you run the program for the first time to ensure that any invalid previous data does not mess up your experience.
 ```
 cmake .
 ```

@@ -129,23 +129,22 @@ TEST(CatalogTest, SortByDateTest) {
 TEST(CatalogTest, StoreTest) {
     Catalog catalog;
     catalog.addBook("Title1", "Author1", 2, "2001", "Genre1", "Lang1", "Subj1", 1);
-    catalog.store();
-    ifstream file("storage/Catalog.txt");
+    catalog.store("test/testStorage/testStorage/Catalog.txt");
+    ifstream file("test/testStorage/testStorage/Catalog.txt");
+    ASSERT_TRUE(file.is_open());
     string line;
     getline(file, line);
     EXPECT_EQ(line, "Title1|Author1|Genre1|Lang1|Subj1|2001|2|1");
     file.close();
-
 }
-/*
+
 TEST(CatalogTest, ReadBooksFromFileTest) {
     Catalog catalog;
     catalog.addBook("1925", "F. Scott Fitzgerald", 11, "1949", "20th Century Literature", "English", "Fiction", 1);
-    catalog.store();
-    catalog.readBooksFromFile("storage/Catalog.txt");
-    Book* book = catalog.findBook("1984");
+    catalog.store("test/testStorage/testStorage/Catalog.txt");
+    catalog.readBooksFromFile("test/testStorage/testStorage/Catalog.txt");
+    Book* book = catalog.findBook("1925");
     EXPECT_TRUE(book != nullptr);
-    EXPECT_EQ(book->getTitle(), "1984");
-    EXPECT_EQ(book->getAuthor(), "George Orwell");
+    EXPECT_EQ(book->getTitle(), "1925");
+    EXPECT_EQ(book->getAuthor(), "F. Scott Fitzgerald");
 }
-*/

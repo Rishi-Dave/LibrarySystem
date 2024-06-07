@@ -32,7 +32,6 @@ int main() {
         }
         else{
             bool stop = display.displayInputPrompt(userDisplay, database, catDisplay, catalog);
-            cout << stop << endl;
             if(stop){
                 break;
             }

@@ -32,8 +32,8 @@ bool Display::displayAdmin(AdminDisplay& adminDisplay, UserDatabase& database, C
         database.logout();
     }
     else if(input == "e" || input == "E"){
-        catalog.store();
-        database.writeFile();
+        catalog.store("storage/Catalog.txt");
+        database.writeFile("storage/Users.txt");
         return true;
     }
     return false;
@@ -77,8 +77,8 @@ bool Display::displayInputPrompt(UserDisplay& userDisplay, UserDatabase& databas
         database.logout();
     }
     else if(input == "e" || input == "E"){
-        catalog.store();
-        database.writeFile();
+        catalog.store("storage/Catalog.txt");
+        database.writeFile("storage/Users.txt");
         return true;
     }
     return false;
@@ -207,8 +207,8 @@ bool Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
     }
 
     else if (input == "e" || input == "E") {
-        catalog.store();
-        database.writeFile();
+        catalog.store("storage/Catalog.txt");
+        database.writeFile("storage/Users.txt");
         return true;
     }
     return false;

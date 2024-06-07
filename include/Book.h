@@ -47,11 +47,4 @@ public:
     void setISBN(int &isbn);
     void setStatus(bool status);
     void setID(int &id);
-
-    
-    // Print 
-    void printBook() const;
-
-    // Show all 
-    void showAll() const;
 };

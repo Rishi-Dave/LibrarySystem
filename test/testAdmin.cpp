@@ -1,8 +1,6 @@
 #include "googletest/googletest/include/gtest/gtest.h"
 #include "../include/AdminUser.h"
 #include "../include/Catalog.h"
-#include <gtest/gtest.h>
-#include <gmock/gmock.h>
 #include "../include/Book.h"
 
 

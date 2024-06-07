@@ -16,6 +16,6 @@ void BookDisplay::printBook(Book book){
 
 // // Show all function
 void BookDisplay::showAll(Book book) {
-    cout << "Title: " << book.getTitle() << " | Author:" << book.getAuthor() << " | Genre:" << book.getGenre() << " | Language:" << book.getLanguage() << " | Subject:" << book.getSubject() << " | Date Published:" << book.getDate() << " | ISBN:" << book.getISBN() <<"| ID:"<<book.getID()<<endl;
+    cout << "Title: " << book.getTitle() << " | Author:" << book.getAuthor() << " | Genre:" << book.getGenre() << " | Language:" << book.getLanguage() << " | Subject:" << book.getSubject() << " | Date Published:" << book.getDate() << " | ISBN:" << book.getISBN() <<" | ID:"<<book.getID()<<endl;
 }
 

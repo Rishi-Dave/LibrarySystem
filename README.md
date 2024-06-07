@@ -62,7 +62,7 @@ These command should generate a executable ``` ./bin/runMain``` and now whenever
 ./runMain
 ```
  ## Testing
-> * How we tests:
+> * How we test:
 >    * The Project was validated using the google test suite and using a series of Unit Tests for each file to make sure they have proper behavior, accept input and output properly.
 > * Our Approach:
 >   * Our approach going into testing was to start with basic classes such as User and Book and then work our way into Display classes. With basic functions, we simply just called the function and see if its functionality works. To do this, we first tested the most basic methods and then used those methods to test the more complex methods(ex. using findBook() to test addBook() and addBook() to test removeBook(), etc.). Then, we moved on to the Display classes that outputted using cout to the terminal. After some research, we found std library functions to convert outputs into stringstreams which we could process as strings. We then compared that to what we want the output the be as a testing method. Another Feature we incorporated was "TEST_F" and using a SetUp() function to set up all of our testing variables before testing each function.

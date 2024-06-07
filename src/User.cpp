@@ -9,14 +9,6 @@ User::User(std::string first, std::string last, std::string uname,std::string ke
     isAdmin = false;
 }
 
-void User::payFees(double payment){
-    fees= fees-payment;
-    if(fees<0){
-        fees = 0;
-    }
-}
-
-
 std::string User::getUserInfo(){
     std::string output = "";
     output = output + firstName + " ";

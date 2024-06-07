@@ -26,7 +26,6 @@ class User{
         void setFirstName(std::string newName){ firstName = newName;}
         void setLastName(std::string newName){ lastName = newName;}
         //functions
-        void payFees(double payment);
         void checkoutBook(Book book); 
         void returnBook (string title);
         Book* findBook(string title);
@@ -35,8 +34,4 @@ class User{
         //testing purposes
         void populatebooks();
         std::string getUserInfo();
-        
-
-
-
 };

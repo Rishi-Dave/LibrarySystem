@@ -40,11 +40,7 @@
 
  > One of the first changes we made to apply to Solid Principals was to add separate Display classes for each class inorder to follow the Single Responsibility Principle. This Change allowed us to write better code since it became easier to edit the display versus the actual functionality of the program. It allowed for much easier and faster development. Additionally, we follow the open and closed principle since the code base is all open to expansion and creating new functions, but it is closed off from modification. We also follow the interface segregation principle with the book display class. The book display class is the only display class that doesn't take in input variables and the whole point of the Display Parent class is to help with input functionality. If the book display inherited from this class it would be a violation of the Interface segregation principle since those functions are useless for the class; thus, the book display class doesn't inherit like all the other display classes. It helped create better code since the bookDisplay class isn't needless inheriting functions and helps the code run faster.
  > ## Final deliverable
- > All group members will give a demo to the reader during lab time. ou should schedule your demo on Calendly with the same reader who took your second scrum meeting. The reader will check the demo and the project GitHub repository and ask a few questions to all the team members. 
- > Before the demo, you should do the following:
- > * Complete the sections below (i.e. Screenshots, Installation/Usage, Testing)
- > * Plan one more sprint (that you will not necessarily complete before the end of the quarter). Your In-progress and In-testing columns should be empty (you are not doing more work currently) but your TODO column should have a full sprint plan in it as you have done before. This should include any known bugs (there should be some) or new features you would like to add. These should appear as issues/cards on your Project board.
- > * Make sure your README file and Project board are up-to-date reflecting the current status of your project (e.g. any changes that you have made during the project such as changes to your class diagram). Previous versions should still be visible through your commit history. 
+
  
  ## Screenshots
  > Screenshots of the input/output after running the application
@@ -66,10 +62,12 @@ These command should generate a executable ``` ./bin/runMain``` and now whenever
 ./runMain
 ```
  ## Testing
- > The Project was validated using the google test suite and using a series of Unit Tests for each file to make sure they have proper behavior, accept input and output properly.
- > Our approach going into testing was to start with basic classes such as User and Book and then work our way into Display classes. With basic functions, we simply just called the function and see if its functionality works. To do this, we first tested the most basic methods and then used those methods to test the more complex methods(ex. using findBook() to test addBook() and addBook() to test removeBook(), etc.). Then, we moved on to the Display classes that outputted using cout to the terminal. After some research, we found std library functions to convert outputs into stringstreams which we could process as strings. We then compared that to what we want the output the be as a testing method.
-> Who Made What Tests
->  * Rishi: BookDisplay.cpp, CatalogDisplay.cpp, ParentDisplay.cpp, AdminUser.cpp, User.cpp
->  * Atharva: UserDisplay.cpp, UserDatabase.cpp
->  * Hanlin: Catalog.cpp
->  * Xuanyang: Book.cpp
+> * How we tests:
+>    * The Project was validated using the google test suite and using a series of Unit Tests for each file to make sure they have proper behavior, accept input and output properly.
+> * Our Approach:
+>   * Our approach going into testing was to start with basic classes such as User and Book and then work our way into Display classes. With basic functions, we simply just called the function and see if its functionality works. To do this, we first tested the most basic methods and then used those methods to test the more complex methods(ex. using findBook() to test addBook() and addBook() to test removeBook(), etc.). Then, we moved on to the Display classes that outputted using cout to the terminal. After some research, we found std library functions to convert outputs into stringstreams which we could process as strings. We then compared that to what we want the output the be as a testing method. Another Feature we incorporated was "TEST_F" and using a SetUp() function to set up all of our testing variables before testing each function.
+> * Who Made What Tests
+>      * Rishi: BookDisplay.cpp, CatalogDisplay.cpp, ParentDisplay.cpp, AdminUser.cpp, User.cpp
+>      * Atharva: UserDisplay.cpp, UserDatabase.cpp
+>      * Hanlin: Catalog.cpp
+>     * Xuanyang: Book.cpp

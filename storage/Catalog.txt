@@ -14,3 +14,5 @@ Dummy Book|Rishi Dave|Computer Science|C++|Project|2024|2342|12
 
 Lord of the Flies|William Golding|Psycological Fiction|English|Wartime Fiction|1954|3124|24
 
+1984|George Orwell|Dystopian|English|Novel|1949|123456|101
+

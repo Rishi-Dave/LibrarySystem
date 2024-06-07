@@ -184,8 +184,3 @@ void Catalog::readBooksFromFile(const string& filename) {
     file.close();
 }
 
-void Catalog::testPrint(){
-    for(unsigned i = 0; i < catalog.size(); i++){
-        cout << catalog.at(i).getTitle() << endl;
-    }
-}

@@ -83,14 +83,46 @@ test/CMakeFiles/runAllTests.dir/TestBook.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runAllTests.dir/TestBook.cpp.s"
 	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test/TestBook.cpp -o CMakeFiles/runAllTests.dir/TestBook.cpp.s
 
+test/CMakeFiles/runAllTests.dir/booktest.cpp.o: test/CMakeFiles/runAllTests.dir/flags.make
+test/CMakeFiles/runAllTests.dir/booktest.cpp.o: test/booktest.cpp
+test/CMakeFiles/runAllTests.dir/booktest.cpp.o: test/CMakeFiles/runAllTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/runAllTests.dir/booktest.cpp.o"
+	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/runAllTests.dir/booktest.cpp.o -MF CMakeFiles/runAllTests.dir/booktest.cpp.o.d -o CMakeFiles/runAllTests.dir/booktest.cpp.o -c /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test/booktest.cpp
+
+test/CMakeFiles/runAllTests.dir/booktest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runAllTests.dir/booktest.cpp.i"
+	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test/booktest.cpp > CMakeFiles/runAllTests.dir/booktest.cpp.i
+
+test/CMakeFiles/runAllTests.dir/booktest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runAllTests.dir/booktest.cpp.s"
+	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test/booktest.cpp -o CMakeFiles/runAllTests.dir/booktest.cpp.s
+
+test/CMakeFiles/runAllTests.dir/catalogtest.cpp.o: test/CMakeFiles/runAllTests.dir/flags.make
+test/CMakeFiles/runAllTests.dir/catalogtest.cpp.o: test/catalogtest.cpp
+test/CMakeFiles/runAllTests.dir/catalogtest.cpp.o: test/CMakeFiles/runAllTests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object test/CMakeFiles/runAllTests.dir/catalogtest.cpp.o"
+	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/runAllTests.dir/catalogtest.cpp.o -MF CMakeFiles/runAllTests.dir/catalogtest.cpp.o.d -o CMakeFiles/runAllTests.dir/catalogtest.cpp.o -c /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test/catalogtest.cpp
+
+test/CMakeFiles/runAllTests.dir/catalogtest.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/runAllTests.dir/catalogtest.cpp.i"
+	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test/catalogtest.cpp > CMakeFiles/runAllTests.dir/catalogtest.cpp.i
+
+test/CMakeFiles/runAllTests.dir/catalogtest.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/runAllTests.dir/catalogtest.cpp.s"
+	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test/catalogtest.cpp -o CMakeFiles/runAllTests.dir/catalogtest.cpp.s
+
 # Object files for target runAllTests
 runAllTests_OBJECTS = \
-"CMakeFiles/runAllTests.dir/TestBook.cpp.o"
+"CMakeFiles/runAllTests.dir/TestBook.cpp.o" \
+"CMakeFiles/runAllTests.dir/booktest.cpp.o" \
+"CMakeFiles/runAllTests.dir/catalogtest.cpp.o"
 
 # External object files for target runAllTests
 runAllTests_EXTERNAL_OBJECTS =
 
 bin/runAllTests: test/CMakeFiles/runAllTests.dir/TestBook.cpp.o
+bin/runAllTests: test/CMakeFiles/runAllTests.dir/booktest.cpp.o
+bin/runAllTests: test/CMakeFiles/runAllTests.dir/catalogtest.cpp.o
 bin/runAllTests: test/CMakeFiles/runAllTests.dir/build.make
 bin/runAllTests: lib/libgmock.a
 bin/runAllTests: lib/libgtest.a
@@ -99,7 +131,7 @@ bin/runAllTests: src/libsimpleLibrary.a
 bin/runAllTests: lib/libgtest.a
 bin/runAllTests: /usr/lib64/libm.so
 bin/runAllTests: test/CMakeFiles/runAllTests.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ../bin/runAllTests"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Linking CXX executable ../bin/runAllTests"
 	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/runAllTests.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

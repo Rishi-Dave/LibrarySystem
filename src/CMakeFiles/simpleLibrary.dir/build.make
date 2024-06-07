@@ -83,17 +83,33 @@ src/CMakeFiles/simpleLibrary.dir/Book.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simpleLibrary.dir/Book.cpp.s"
 	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/src/Book.cpp -o CMakeFiles/simpleLibrary.dir/Book.cpp.s
 
+src/CMakeFiles/simpleLibrary.dir/Catalog.cpp.o: src/CMakeFiles/simpleLibrary.dir/flags.make
+src/CMakeFiles/simpleLibrary.dir/Catalog.cpp.o: src/Catalog.cpp
+src/CMakeFiles/simpleLibrary.dir/Catalog.cpp.o: src/CMakeFiles/simpleLibrary.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object src/CMakeFiles/simpleLibrary.dir/Catalog.cpp.o"
+	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT src/CMakeFiles/simpleLibrary.dir/Catalog.cpp.o -MF CMakeFiles/simpleLibrary.dir/Catalog.cpp.o.d -o CMakeFiles/simpleLibrary.dir/Catalog.cpp.o -c /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/src/Catalog.cpp
+
+src/CMakeFiles/simpleLibrary.dir/Catalog.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/simpleLibrary.dir/Catalog.cpp.i"
+	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/src/Catalog.cpp > CMakeFiles/simpleLibrary.dir/Catalog.cpp.i
+
+src/CMakeFiles/simpleLibrary.dir/Catalog.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/simpleLibrary.dir/Catalog.cpp.s"
+	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/src && /usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/src/Catalog.cpp -o CMakeFiles/simpleLibrary.dir/Catalog.cpp.s
+
 # Object files for target simpleLibrary
 simpleLibrary_OBJECTS = \
-"CMakeFiles/simpleLibrary.dir/Book.cpp.o"
+"CMakeFiles/simpleLibrary.dir/Book.cpp.o" \
+"CMakeFiles/simpleLibrary.dir/Catalog.cpp.o"
 
 # External object files for target simpleLibrary
 simpleLibrary_EXTERNAL_OBJECTS =
 
 src/libsimpleLibrary.a: src/CMakeFiles/simpleLibrary.dir/Book.cpp.o
+src/libsimpleLibrary.a: src/CMakeFiles/simpleLibrary.dir/Catalog.cpp.o
 src/libsimpleLibrary.a: src/CMakeFiles/simpleLibrary.dir/build.make
 src/libsimpleLibrary.a: src/CMakeFiles/simpleLibrary.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libsimpleLibrary.a"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=/home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX static library libsimpleLibrary.a"
 	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/src && $(CMAKE_COMMAND) -P CMakeFiles/simpleLibrary.dir/cmake_clean_target.cmake
 	cd /home/csmajs/rdave009/final-project-rdave009-xlai015-hliu246-aneva018/src && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/simpleLibrary.dir/link.txt --verbose=$(VERBOSE)
 

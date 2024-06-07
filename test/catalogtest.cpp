@@ -1,4 +1,4 @@
-#include <gtest/gtest.h>
+#include "googletest/googletest/include/gtest/gtest.h"
 #include "../include/Catalog.h"
 
 TEST(CatalogTest, ConstructorTest) {
@@ -215,15 +215,4 @@ TEST(CatalogTest, ReadBooksFromFileTest) {
     EXPECT_EQ(book->getSubject(), "Novel");
     EXPECT_EQ(book->getStatus(), false);
     EXPECT_EQ(book->getID(), 101);
-}
-
-TEST(CatalogTest, TestPrint) {
-    Catalog catalog;
-    catalog.addBook("1984", "George Orwell", 123456, "1949", "Dystopian", "English", "Novel", 101);
-
-    std::ostringstream oss;
-    catalog.testPrint(oss);
-    std::string output = oss.str();
-
-    EXPECT_EQ(output, "1984\n");
 }

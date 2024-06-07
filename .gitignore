@@ -1,21 +1,23 @@
+# Ignore Visual Studio Code configuration files
 *.vscode
+
+# Ignore build artifacts and caches
 a.out
-CMakeFiles
+CMakeFiles/
 cmake_install.cmake
-
 CMakeCache.txt
-
-runMain
-build
+build/
 Makefile
-bin
-lib
 
-
-
-CMakeCache.txt
-googletest-download
-googletest-build
-googletest-src
-
+# Ignore binaries and libraries
+runMain
+bin/
+lib/
 *.a
+
+# Ignore Google Test artifacts
+googletest-download/
+googletest-build/
+googletest-src/
+
+# Add any other general files or directories to be ignored

@@ -1,11 +1,13 @@
 *.vscode
 a.out
-CMakeFiles
-*.cmake
+CMakeFiles/*
 CMakeCache.txt
 runMain
 build
 Makefile
 bin
 lib
+googletest-download
+googletest-build
+googletest-src
 *.a

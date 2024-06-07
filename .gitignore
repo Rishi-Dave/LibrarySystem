@@ -22,4 +22,6 @@ googletest-src/
 
 # Ignore the storage directory
 storage
+testCatalog.txt
+testUsers.txt
 testStorage

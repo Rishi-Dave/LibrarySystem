@@ -19,7 +19,10 @@ int main() {
     
     while(true){
         if(database.getAdminUser()){
-            display.displayAdmin(adminDisplay, database, catDisplay, catalog);
+            bool stop = display.displayAdmin(adminDisplay, database, catDisplay, catalog);
+            if(stop){
+                break;
+            }
         }
         else if(!database.getCurUser()){
             bool stop = display.printWelcomeMessage(database, catalog);

@@ -125,7 +125,7 @@ TEST(CatalogTest, SortByDateTest) {
     EXPECT_EQ(books->at(1).getDate(), "12");
 }
 
-/*
+
 TEST(CatalogTest, StoreTest) {
     Catalog catalog;
     catalog.addBook("Title1", "Author1", 2, "2001", "Genre1", "Lang1", "Subj1", 1);
@@ -135,8 +135,9 @@ TEST(CatalogTest, StoreTest) {
     getline(file, line);
     EXPECT_EQ(line, "Title1|Author1|Genre1|Lang1|Subj1|2001|2|1");
     file.close();
-}
 
+}
+/*
 TEST(CatalogTest, ReadBooksFromFileTest) {
     Catalog catalog;
     catalog.addBook("1925", "F. Scott Fitzgerald", 11, "1949", "20th Century Literature", "English", "Fiction", 1);

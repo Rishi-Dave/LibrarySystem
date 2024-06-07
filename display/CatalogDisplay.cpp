@@ -49,6 +49,12 @@ void CatalogDisplay::printbyISBN(Catalog cat){
 
 
 void CatalogDisplay::viewCatalog(Catalog* catalog){
+    if(catalog->vectorPointer()->size() == 0){
+        cout << "Catalog is Empty" << endl << endl;
+        cout << "Press Enter to continue.";
+        cin.get();
+        return;
+    }
     printPageBreak();
     cout<< "Book Catalog:"<<endl<<endl;
     print(*catalog);

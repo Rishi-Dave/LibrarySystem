@@ -1,20 +1,2 @@
-The Great Gatsby|F. Scott Fitzgerald|Fiction|English|20th Century Literature|1925|11|1
 
-To Kill a Mockingbird|Harper Lee|Fiction|English|Civil Rights|1960|420|2
-
-1984|George Orwell|Dystopian|English|Political Fiction|1949|810|3
-
-Moby-Dick|Herman Melville|Adventure|English|Maritime Fiction|1851|184|5
-
-War and Peace|Leo Tolstoy|Historical Fiction|Russian|Napoleonic Wars|1869|2082|6
-
-The Catcher in the Rye|J.D. Salinger|Fiction|English|Coming-of-Age|1951|676|7
-
-Dummy Book|Rishi Dave|Computer Science|C++|Project|2024|2342|12
-
-Lord of the Flies|William Golding|Psycological Fiction|English|Wartime Fiction|1954|3124|24
-
-1984|George Orwell|Dystopian|English|Novel|1949|123456|101
-
-1984|George Orwell|Dystopian|English|Novel|1949|123456|101
 

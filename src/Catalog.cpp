@@ -174,7 +174,6 @@ void Catalog::readBooksFromFile(const string& filename) {
         if (isbn.empty() || !all_of(isbn.begin(), isbn.end(), ::isdigit)) {
             continue;
         }
-        //int intIsbn = std::stoi(isbn);
         getline(ss, id, '|');
         int intId = std::stoi(id);
         int intIsbn = std::stoi(isbn);
@@ -183,4 +182,3 @@ void Catalog::readBooksFromFile(const string& filename) {
 
     file.close();
 }
-

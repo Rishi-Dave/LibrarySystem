@@ -1,9 +1,9 @@
 add_library(simpleLibrary2
   AdminDisplay.cpp
-  ParentDisplay.cpp
   BookDisplay.cpp
   CatalogDisplay.cpp
   Display.cpp
+  ParentDisplay.cpp
   UserDisplay.cpp
 )
 

@@ -10,6 +10,7 @@ add_executable(runAllTests
   TestBook.cpp 
   booktest.cpp
   catalogtest.cpp
+  userdisplaytest.cpp
   testAdmin.cpp
   testUser.cpp
   testBookDisplay.cpp

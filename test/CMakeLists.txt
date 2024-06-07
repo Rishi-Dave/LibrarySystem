@@ -6,8 +6,6 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY "${PROJECT_BINARY_DIR}/display")
 add_subdirectory(googletest)
 
 add_executable(runAllTests
-
-  TestBook.cpp 
   booktest.cpp
   catalogtest.cpp
   userdisplaytest.cpp
@@ -18,6 +16,7 @@ add_executable(runAllTests
   testingCatalogDisplay.cpp
   userDatabaseTest.cpp
   adminDisplayTest.cpp
+  displayTest.cpp
 )
 
 

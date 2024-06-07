@@ -129,8 +129,8 @@ TEST(CatalogTest, SortByDateTest) {
 TEST(CatalogTest, StoreTest) {
     Catalog catalog;
     catalog.addBook("Title1", "Author1", 2, "2001", "Genre1", "Lang1", "Subj1", 1);
-    catalog.store("test/testStorage/testStorage/Catalog.txt");
-    ifstream file("test/testStorage/testStorage/Catalog.txt");
+    catalog.store("testCatalog.txt");
+    ifstream file("testCatalog.txt");
     ASSERT_TRUE(file.is_open());
     string line;
     getline(file, line);
@@ -141,8 +141,8 @@ TEST(CatalogTest, StoreTest) {
 TEST(CatalogTest, ReadBooksFromFileTest) {
     Catalog catalog;
     catalog.addBook("1925", "F. Scott Fitzgerald", 11, "1949", "20th Century Literature", "English", "Fiction", 1);
-    catalog.store("test/testStorage/testStorage/Catalog.txt");
-    catalog.readBooksFromFile("test/testStorage/testStorage/Catalog.txt");
+    catalog.store("testCatalog.txt");
+    catalog.readBooksFromFile("testCatalog.txt");
     Book* book = catalog.findBook("1925");
     EXPECT_TRUE(book != nullptr);
     EXPECT_EQ(book->getTitle(), "1925");

@@ -1,2 +1,3 @@
-Rishi Dave rdave rishidave1 Y 3 12 
-Atharva Nevasekar aneva password Y 5 
+Rishi Dave rdave rishidave1 Y 41 
+Atharva Nevasekar aneva password N 
+hi bye h h N 

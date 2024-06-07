@@ -1,7 +1,7 @@
 #include "../include/Display.h"
 #include <limits>
 
-void Display::displayAdmin(AdminDisplay& adminDisplay, UserDatabase& database, CatalogDisplay& catDisplay, Catalog& catalog) {
+bool Display::displayAdmin(AdminDisplay& adminDisplay, UserDatabase& database, CatalogDisplay& catDisplay, Catalog& catalog) {
     printPageBreak();
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
     cout << "What would you like to do?" << endl << endl;
@@ -34,13 +34,14 @@ void Display::displayAdmin(AdminDisplay& adminDisplay, UserDatabase& database, C
     else if(input == "e" || input == "E"){
         catalog.store();
         database.writeFile();
-        exit(1);
+        return true;
     }
+    return false;
 
 }
 
 
-void Display::displayInputPrompt(UserDisplay& userDisplay, UserDatabase& database, CatalogDisplay& catDisplay, Catalog& catalog) {
+bool Display::displayInputPrompt(UserDisplay& userDisplay, UserDatabase& database, CatalogDisplay& catDisplay, Catalog& catalog) {
     printPageBreak();
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
     cout << "What would you like to do?" << endl << endl;
@@ -78,13 +79,13 @@ void Display::displayInputPrompt(UserDisplay& userDisplay, UserDatabase& databas
     else if(input == "e" || input == "E"){
         catalog.store();
         database.writeFile();
-        exit(1);
+        return true;
     }
-    
+    return false;
 }
 
 
-void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
+bool Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
     printPageBreak();
     cout << "Welcome To Our Library Management System!!!" << endl << endl;
     cout << "Please Sign Into Your Account To Begin Checking Out Books!" << endl << endl;
@@ -103,29 +104,30 @@ void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
     string password;
     string password2;
 
-    if(input != "l" && input != "s" && input != "e"&& input != "a"  && input != "L" && input != "S" && input != "E" && input != "A"){
-        return;
+    while(input != "l" && input != "s" && input != "e"&& input != "a"  && input != "L" && input != "S" && input != "E" && input != "A"){
+        input = getInput("");
+        cout << "Please enter a correct input" << endl;
     }
-    else if (input == "l"|| input == "L") {
+    if (input == "l"|| input == "L") {
         printPageBreak();
         cout << "Log In(q to exit): " << endl << endl;
 
         userName = getInput("Enter User Name: ");
         
          if (userName == "q") {
-            return;
+            return false;
         }
 
         password = getInput("Enter Password: ");
 
         if (password == "q") {
-            return;
+            return false;
         }
         
         cout << endl;
         if(!database.login(userName, password)){
             cout<<"User with these Credentials was not found, please try again or sign up for a new account"<<endl;
-            return;
+            return false;
         }
     }
     else if (input == "a"|| input == "A") {
@@ -135,19 +137,19 @@ void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
         userName = getInput("Enter User Name: ");
         
          if (userName == "q") {
-            return;
+            return false;
         }
 
         password = getInput("Enter Password: ");
 
         if (password == "q") {
-            return;
+            return false;
         }
         
         cout << endl;
         if(!database.adminLogin(userName, password)){
             cout<<"User with these Credentials was not found, please try again or sign up for a new account"<<endl;
-            return;
+            return false;
         }
     }
     else if (input == "s" || input == "S") {
@@ -196,19 +198,20 @@ void Display::printWelcomeMessage(UserDatabase &database, Catalog& catalog) {
         if (confirm == "Y" || confirm == "y") {
             database.signup(firstName, lastName, userName, password);
             cout<<"Your acount has been created you now login"<<endl<<endl;
-            return;
+            return false;
         }
 
         else if (confirm == "N"|| confirm == "n") {
-            return;
+            return false;
         }
     }
 
     else if (input == "e" || input == "E") {
         catalog.store();
         database.writeFile();
-        exit(1);
+        return true;
     }
+    return false;
 
 }
 

@@ -9,7 +9,13 @@ UserDatabase::UserDatabase(Catalog* catalogPointer){
     curUser = nullptr;
     adminUser = nullptr;
 }
-
+UserDatabase::~UserDatabase(){
+    for (User* user : userList) {
+        delete user;
+    }
+    userList.clear();
+    adminList.clear();
+}
 void UserDatabase::addUser(User* user){
     userList.push_back(user);
 }

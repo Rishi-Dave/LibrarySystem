@@ -17,6 +17,7 @@ add_executable(runAllTests
   parentDisplayTest.cpp
   testingCatalogDisplay.cpp
   userDatabaseTest.cpp
+  adminDisplayTest.cpp
 )
 
 

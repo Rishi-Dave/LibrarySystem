@@ -5,7 +5,6 @@ add_library(simpleLibrary2
   Display.cpp
   ParentDisplay.cpp
   UserDisplay.cpp
-
 )
 
 find_library(M_LIB m)

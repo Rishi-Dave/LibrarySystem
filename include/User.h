@@ -10,7 +10,6 @@ class User{
         std::string password;
         std::vector<Book> checkedBooks;
         Catalog* catalog;
-        bool isAdmin;
     public:
         //constructor
         User(std::string first, std::string last, std::string uname,std::string key, Catalog* theCatalog);
@@ -19,7 +18,6 @@ class User{
         std::string getLastName(){ return lastName;};
         std::string getUserName(){ return userName;};
         std::string getPassword(){return password;};
-        bool getIsAdmin() { return isAdmin;};
         std::vector<Book>* vectorPointer(){return &checkedBooks;};
         //mutators 
         void setFirstName(std::string newName){ firstName = newName;}

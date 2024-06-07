@@ -34,9 +34,9 @@ add_executable(runMain
     display/CatalogDisplay.cpp
     display/ParentDisplay.cpp
 )
+
 add_subdirectory(src)
 add_subdirectory(display)
-
 add_subdirectory(test)
 
 

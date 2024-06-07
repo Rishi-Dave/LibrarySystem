@@ -6,7 +6,6 @@ User::User(std::string first, std::string last, std::string uname,std::string ke
     userName=uname;
     password = key;
     catalog = theCatalog;
-    isAdmin = false;
 }
 
 std::string User::getUserInfo(){

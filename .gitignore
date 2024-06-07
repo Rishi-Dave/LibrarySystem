@@ -3,7 +3,7 @@
 
 # Ignore build artifacts and caches
 a.out
-CMakeFiles/
+CMakeFiles
 cmake_install.cmake
 CMakeCache.txt
 build/

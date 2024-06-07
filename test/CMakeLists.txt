@@ -17,6 +17,7 @@ add_executable(runAllTests
   testingCatalogDisplay.cpp
 )
 
+
 target_link_libraries(runAllTests gmock gtest gtest_main)
 target_link_libraries(runAllTests simpleLibrary simpleLibrary2)
 
